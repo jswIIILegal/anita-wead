@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+    This page has been updated to move the résumé section above the A.N.I.T.A.
+    gallery and to add a simple password gate on the photo grid.  When the
+    Coming Soon section is expanded the visitor will be asked for a password
+    ("felicita") before the pictures are revealed.  The toggle and
+    password‑check logic lives in the embedded script below.
+  -->
   <title>James Scott Wead III – Professional Résumé &amp; A.N.I.T.A. Gallery</title>
   <style>
     /* Base styling */
@@ -70,7 +77,7 @@
       background: #b6d5f2;
     }
     .arrow::before {
-      content: '\25B6'; /* Right-pointing triangle */
+      content: '\25B6'; /* Right‑pointing triangle */
       display: inline-block;
       transition: transform 0.3s ease;
       font-size: 1.2em;
@@ -98,7 +105,7 @@
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    /* Resume section styling */
+    /* Résumé section styling */
     #resume {
       background: #f5f5f5;
       border-radius: 8px;
@@ -138,6 +145,29 @@
       color: #555;
       margin-bottom: 20px;
     }
+    /* Password gate styling */
+    #password-container {
+      margin-top: 20px;
+    }
+    #password-container input[type="password"] {
+      padding: 8px;
+      font-size: 1em;
+      margin-right: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    #password-container button {
+      padding: 8px 12px;
+      font-size: 1em;
+      background: #0d47a1;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #password-container button:hover {
+      background: #08306b;
+    }
   </style>
   <script>
     // Toggle function for collapsible sections
@@ -151,6 +181,25 @@
         arrow.classList.toggle('expanded');
       }
     }
+
+    // Password check for the photo gallery.  When the correct password is entered
+    // (case‑insensitive match on "felicita"), the password prompt disappears and
+    // the gallery becomes visible.  Incorrect entries trigger a simple alert.
+    function checkPassword() {
+      var inputField = document.getElementById('photo-password');
+      var entered = (inputField.value || '').trim().toLowerCase();
+      if (entered === 'felicita') {
+        // Hide the password container and reveal the photo grid
+        var passwordContainer = document.getElementById('password-container');
+        var photoGrid = document.getElementById('photo-grid');
+        if (passwordContainer) passwordContainer.style.display = 'none';
+        if (photoGrid) photoGrid.classList.remove('hidden');
+      } else {
+        alert('Incorrect password!');
+      }
+      // Clear the input so the next attempt starts fresh
+      if (inputField) inputField.value = '';
+    }
   </script>
 </head>
 <body>
@@ -161,7 +210,80 @@
     <p>Professional Résumé</p>
   </header>
 
-  <!-- Coming Soon ANITA section -->
+  <!-- Résumé Section moved above the ANITA gallery -->
+  <section id="resume">
+    <h2>Professional Résumé</h2>
+    <a href="James_Scott_Wead_III_resume.pdf" download class="download-button">Download Résumé (PDF)</a>
+    <button class="toggle-button" onclick="toggleSection('resume-content')">
+      <span>Full Résumé</span>
+      <span id="resume-content-arrow" class="arrow"></span>
+    </button>
+    <div id="resume-content" class="hidden">
+      <pre>
+    James Scott Wead III
+    847&nbsp;809-8313&nbsp;·&nbsp;jimmy@wead.ai&nbsp;·&nbsp;Palatine, IL
+
+    Professional Summary
+    Multidisciplinary sales, construction, and technology leader with 25+ years of high-impact experience across construction project management, one-call-close technical sales (18 years in 100% commission roles), and AI-driven investigative systems. Proven track record of results: Awarded Rookie of the Year at IPA for generating $3.2M in consulting sales and led a $4.4M design/build fire restoration for Bay Marine from disaster response through occupancy. Independently developed a litigation-grade legal research platform anita (Automated Network for Investigative and Technical Analysis) in under 4 months – work valued at $600K+ – demonstrating advanced Python full-stack development and data forensics. Trained in Metl-Span, Varco Pruden, and Nucor building systems; fluent in blueprint analysis, technical selling, and territory development. Combines a builder-first mindset with an investigator's eye for detail to consistently deliver value and integrity.
+
+    Key Skills
+    Project Management &amp; Structural Design: Turnkey design/build execution for PEMB structures and cold-storage facilities.
+    Insulated Metal Panels (IMP) &amp; Building Envelopes: Expert in IMP wall/roof systems (Metl-Span, OneDek), vapor barrier integration, and airtight cold-storage envelopes.
+    Technical Sales &amp; Territory Development: One-call-close sales strategy, Midwest territory management, and contractor network building from scratch.
+    Legal/Regulatory Compliance Analytics: Workflow design for code compliance, FIRREA/HUD/RICO violation tracking, and FOIA-triggered document analysis.
+
+    AI &amp; Data Analysis: OCR processing, metadata mapping, and semantic de-duplication for large datasets (80K+ records) using Python, FastAPI, and Pydantic frameworks.
+    Software &amp; Tools: FastAPI, Pydantic, JSON schema design, GitHub Copilot-assisted development, Notion integration, command-line (CLI) data pipelines, Google Drive API, VS Code.
+
+    Technical &amp; Investigative Development
+    Independent Researcher &amp; System Architect — July 2024 – Present
+    Began developing investigative tools and legal automation frameworks in mid-2024 through manual research, public records analysis, and document mapping — later evolving the project into a full-stack AI-powered system known as anita (Automated Network for Investigative and Technical Analysis).
+    Built a proprietary forensic pipeline to flag financial misconduct, trace shell companies, and surface retaliation patterns across 86,000+ records.
+    Transitioned from traditional research to AI-based analysis in early 2024, leveraging FastAPI, Python, GitHub Copilot, and JSON schema design to automate previously manual workflows.
+    Delivered litigation-grade reports valued at over $600K in equivalent consulting output — supporting active cases and regulatory referrals (HUD, IDFPR, FIRREA).
+    Integrated OCR, metadata indexing, FOIA relevance scoring, and RICO predicate chain detection into a modular architecture anchored in clean, reproducible code.
+    Continuously refined the system with legal logic models and deep-link search capabilities, connected to Notion for collaborative case intelligence.
+
+    Design/Build Manager &amp; Lead Project Manager — T.A. Bowman Constructors (Bloomingdale, IL) — March 2021 – June 2024
+    Managed a $4.4M+ fire restoration of the Bay Marine boat facility in Waukegan, IL, from initial disaster response through final occupancy – coordinated 10+ change orders, specialty sub-trades, and code upgrade solutions.
+    Designed a Walmart Distribution Center structure in Auburn, IN and oversaw complete building envelope installation using Metl-Span insulated panels with advanced vapor barrier detailing for climate control.
+    Won a national Nucor CAD design challenge (2024) for the most cost-efficient, code-compliant pre-engineered metal building design. Introduced an innovative insulated roof deck system (OneDek) on a Boys &amp; Girls Club retrofit, which became a showcase project for the manufacturer.
+
+    Sales Executive — Midwest Territory — KMK Sales (Manufacturer Rep) (Midwest U.S.) — 2018 – 2021
+    Exclusive Midwest representative for leading building envelope products (Metl-Span IMPs, Jamison cold-storage doors, Vapor Armor barriers, Dow foam insulation, etc.), covering IL, MN, WI, IA, ND, SD (and CO).
+    Conducted detailed take-offs, estimates, and on-site trainings for contractors on insulated panel systems – addressing thermal bridging, air seals, and installation best practices.
+    Built a full general contractor target list by state from scratch, and drove specification of IMP solutions in high-profile projects (e.g. supported Metl-Span's award-winning Confluence Center project) to ensure technical alignment and on-site success.
+
+    Outside Sales Consultant — Culligan Water (Greater Chicago Area) — 2008 – 2018
+    Consistently top-performing sales representative (multiple regional awards, incl. "Tidal Wave" and Top Sales honors) for residential and commercial water treatment systems.
+    Built a loyal client base through trust and integrity – known as the "Culligan Man" trusted by homeowners and facilities managers; maintained relationships and referral business years after the initial sale.
+    Featured in the national "Your Healthy Home" TV segment as a model Culligan consultant, reinforcing credibility and customer confidence.
+    Led Sales Excellence for Culligan: Earned numerous national and regional awards including multiple "Tidal Wave" honors. Participated in corporate-sponsored commercial training walk-throughs to demonstrate best practices. Represented the company in the territory containing Culligan's historic corporate headquarters (established 1936 in Rosemont, IL).
+
+    Sales Representative — Bob Rohrman Auto Group (Jeep/Chrysler) (Palatine, IL) — 2007 – 2008
+    Achieved high quarterly vehicle sales in a fast-paced retail environment by focusing on customer needs and product knowledge, leading to repeat customer referrals and sustained revenue growth.
+
+    Inside Sales (Rookie of the Year) — International Profit Associates (IPA) (Buffalo Grove, IL) — 2005 – 2007
+    Awarded Rookie of the Year in 2006 for generating $3.2M in consulting revenue through high-volume cold calling and consultative selling to SMB clients.
+
+    Sales Technician / Crew Lead — Stanley Steemer (Palatine, IL) — 1999 – 2005
+    Rose from technician to crew lead while consistently ranking as a top sales performer in service upsells (twice earning a national Indy 500 award trip).
+    Trained and mentored new technicians in both equipment operation and customer service excellence.
+
+    Technical Projects &amp; Investigative Research
+    Founder &amp; Lead Developer – "anita" Investigative Platform (Independent Project, 2024 – Present)
+    Sole architect of anita (Automated Network for Investigative and Technical Analysis) – a proprietary legal forensics and document-intelligence platform designed to expose misconduct, financial fraud, and retaliation patterns across large datasets. Built a full-stack Python architecture (FastAPI, Pydantic) with modular pipelines for OCR processing, shell-entity detection, statutory triggers (FOIA, RICO), and timeline mapping.
+    Ingested and analyzed 86,000+ records with custom JSON schemas and cross-document search capabilities. Engineered automation for metadata tagging, semantic duplicate detection, and entity resolution to reverse-engineer complex financial transactions and shell company networks.
+    Produced litigation-ready investigative reports (comparable to $600K+ of consulting work) by developing this system end-to-end in under 90 days. Deliverables have supported formal complaints and evidentiary packages for HUD, state regulators, and the Illinois Attorney General.
+    Leveraged GitHub Copilot and agile trial-and-error development to rapidly iterate on features. Integrated outputs with Notion for case knowledge management and maintained rigorous data integrity through version-controlled pipelines and document indexing best practices.
+
+    Education
+    William Fremd High School, Palatine, IL — High School Diploma, 1999.
+      </pre>
+    </div>
+  </section>
+
+  <!-- Coming Soon ANITA section with password-protected photo gallery -->
   <section id="coming-soon">
     <button class="toggle-button" onclick="toggleSection('coming-content')">
       <!-- Use HTML numeric codes for emojis to ensure they persist when rendered on GitHub -->
@@ -170,7 +292,13 @@
     </button>
     <div id="coming-content" class="hidden">
       <p class="coming-intro">3.0 stronger than ever — A.N.I.T.A. 2025! Let’s go!</p>
-      <div class="photo-grid">
+      <!-- Password prompt inserted here.  Once the correct password is entered, this container is hidden and the gallery is shown. -->
+      <div id="password-container">
+        <input type="password" id="photo-password" placeholder="Enter password to view photos">
+        <button onclick="checkPassword()">Submit</button>
+      </div>
+      <!-- Photo grid remains hidden until the correct password is entered -->
+      <div id="photo-grid" class="photo-grid hidden">
         <img src="photo_2025-07-16_00-59-43.jpg" alt="Couple enjoying a day on the water">
         <img src="photo_2025-07-16_00-59-44.jpg" alt="Smiling couple posing together">
         <img src="photo_2025-07-16_00-59-45.jpg" alt="Love is in the air collage">
@@ -187,79 +315,6 @@
         <img src="4a84d245-dcc7-4d35-b8b7-a82ec6716ebc.png" alt="Couple near pool in vertical orientation">
         <img src="b219cf07-7ea6-4b23-a330-0ee69a223faa.png" alt="Couple having fun in the kitchen">
       </div>
-    </div>
-  </section>
-
-  <!-- Resume Section -->
-  <section id="resume">
-    <h2>Professional Résumé</h2>
-    <a href="James_Scott_Wead_III_resume.pdf" download class="download-button">Download Résumé (PDF)</a>
-    <button class="toggle-button" onclick="toggleSection('resume-content')">
-      <span>Full Résumé</span>
-      <span id="resume-content-arrow" class="arrow"></span>
-    </button>
-    <div id="resume-content" class="hidden">
-      <pre>
-James Scott Wead III
-847&nbsp;809-8313&nbsp;·&nbsp;jimmy@wead.ai&nbsp;·&nbsp;Palatine, IL
-
-Professional Summary
-Multidisciplinary sales, construction, and technology leader with 25+ years of high-impact experience across construction project management, one-call-close technical sales (18 years in 100% commission roles), and AI-driven investigative systems. Proven track record of results: Awarded Rookie of the Year at IPA for generating $3.2M in consulting sales and led a $4.4M design/build fire restoration for Bay Marine from disaster response through occupancy. Independently developed a litigation-grade legal research platform anita (Automated Network for Investigative and Technical Analysis) in under 4 months – work valued at $600K+ – demonstrating advanced Python full-stack development and data forensics. Trained in Metl-Span, Varco Pruden, and Nucor building systems; fluent in blueprint analysis, technical selling, and territory development. Combines a builder-first mindset with an investigator's eye for detail to consistently deliver value and integrity.
-
-Key Skills
-Project Management & Structural Design: Turnkey design/build execution for PEMB structures and cold-storage facilities.
-Insulated Metal Panels (IMP) & Building Envelopes: Expert in IMP wall/roof systems (Metl-Span, OneDek), vapor barrier integration, and airtight cold-storage envelopes.
-Technical Sales & Territory Development: One-call-close sales strategy, Midwest territory management, and contractor network building from scratch.
-Legal/Regulatory Compliance Analytics: Workflow design for code compliance, FIRREA/HUD/RICO violation tracking, and FOIA-triggered document analysis.
-
-AI & Data Analysis: OCR processing, metadata mapping, and semantic de-duplication for large datasets (80K+ records) using Python, FastAPI, and Pydantic frameworks.
-Software & Tools: FastAPI, Pydantic, JSON schema design, GitHub Copilot-assisted development, Notion integration, command-line (CLI) data pipelines, Google Drive API, VS Code.
-
-Technical & Investigative Development
-Independent Researcher & System Architect — July 2024 – Present
-Began developing investigative tools and legal automation frameworks in mid-2024 through manual research, public records analysis, and document mapping — later evolving the project into a full-stack AI-powered system known as anita (Automated Network for Investigative and Technical Analysis).
-Built a proprietary forensic pipeline to flag financial misconduct, trace shell companies, and surface retaliation patterns across 86,000+ records.
-Transitioned from traditional research to AI-based analysis in early 2024, leveraging FastAPI, Python, GitHub Copilot, and JSON schema design to automate previously manual workflows.
-Delivered litigation-grade reports valued at over $600K in equivalent consulting output — supporting active cases and regulatory referrals (HUD, IDFPR, FIRREA).
-Integrated OCR, metadata indexing, FOIA relevance scoring, and RICO predicate chain detection into a modular architecture anchored in clean, reproducible code.
-Continuously refined the system with legal logic models and deep-link search capabilities, connected to Notion for collaborative case intelligence.
-
-Design/Build Manager & Lead Project Manager — T.A. Bowman Constructors (Bloomingdale, IL) — March 2021 – June 2024
-Managed a $4.4M+ fire restoration of the Bay Marine boat facility in Waukegan, IL, from initial disaster response through final occupancy – coordinated 10+ change orders, specialty sub-trades, and code upgrade solutions.
-Designed a Walmart Distribution Center structure in Auburn, IN and oversaw complete building envelope installation using Metl-Span insulated panels with advanced vapor barrier detailing for climate control.
-Won a national Nucor CAD design challenge (2024) for the most cost-efficient, code-compliant pre-engineered metal building design. Introduced an innovative insulated roof deck system (OneDek) on a Boys & Girls Club retrofit, which became a showcase project for the manufacturer.
-
-Sales Executive — Midwest Territory — KMK Sales (Manufacturer Rep) (Midwest U.S.) — 2018 – 2021
-Exclusive Midwest representative for leading building envelope products (Metl-Span IMPs, Jamison cold-storage doors, Vapor Armor barriers, Dow foam insulation, etc.), covering IL, MN, WI, IA, ND, SD (and CO).
-Conducted detailed take-offs, estimates, and on-site trainings for contractors on insulated panel systems – addressing thermal bridging, air seals, and installation best practices.
-Built a full general contractor target list by state from scratch, and drove specification of IMP solutions in high-profile projects (e.g. supported Metl-Span's award-winning Confluence Center project) to ensure technical alignment and on-site success.
-
-Outside Sales Consultant — Culligan Water (Greater Chicago Area) — 2008 – 2018
-Consistently top-performing sales representative (multiple regional awards, incl. "Tidal Wave" and Top Sales honors) for residential and commercial water treatment systems.
-Built a loyal client base through trust and integrity – known as the "Culligan Man" trusted by homeowners and facilities managers; maintained relationships and referral business years after the initial sale.
-Featured in the national "Your Healthy Home" TV segment as a model Culligan consultant, reinforcing credibility and customer confidence.
-Led Sales Excellence for Culligan: Earned numerous national and regional awards including multiple "Tidal Wave" honors. Participated in corporate-sponsored commercial training walk-throughs to demonstrate best practices. Represented the company in the territory containing Culligan's historic corporate headquarters (established 1936 in Rosemont, IL).
-
-Sales Representative — Bob Rohrman Auto Group (Jeep/Chrysler) (Palatine, IL) — 2007 – 2008
-Achieved high quarterly vehicle sales in a fast-paced retail environment by focusing on customer needs and product knowledge, leading to repeat customer referrals and sustained revenue growth.
-
-Inside Sales (Rookie of the Year) — International Profit Associates (IPA) (Buffalo Grove, IL) — 2005 – 2007
-Awarded Rookie of the Year in 2006 for generating $3.2M in consulting revenue through high-volume cold calling and consultative selling to SMB clients.
-
-Sales Technician / Crew Lead — Stanley Steemer (Palatine, IL) — 1999 – 2005
-Rose from technician to crew lead while consistently ranking as a top sales performer in service upsells (twice earning a national Indy 500 award trip).
-Trained and mentored new technicians in both equipment operation and customer service excellence.
-
-Technical Projects & Investigative Research
-Founder & Lead Developer – "anita" Investigative Platform (Independent Project, 2024 – Present)
-Sole architect of anita (Automated Network for Investigative and Technical Analysis) – a proprietary legal forensics and document-intelligence platform designed to expose misconduct, financial fraud, and retaliation patterns across large datasets. Built a full-stack Python architecture (FastAPI, Pydantic) with modular pipelines for OCR processing, shell-entity detection, statutory triggers (FOIA, RICO), and timeline mapping.
-Ingested and analyzed 86,000+ records with custom JSON schemas and cross-document search capabilities. Engineered automation for metadata tagging, semantic duplicate detection, and entity resolution to reverse-engineer complex financial transactions and shell company networks.
-Produced litigation-ready investigative reports (comparable to $600K+ of consulting work) by developing this system end-to-end in under 90 days. Deliverables have supported formal complaints and evidentiary packages for HUD, state regulators, and the Illinois Attorney General.
-Leveraged GitHub Copilot and agile trial-and-error development to rapidly iterate on features. Integrated outputs with Notion for case knowledge management and maintained rigorous data integrity through version-controlled pipelines and document indexing best practices.
-
-Education
-William Fremd High School, Palatine, IL — High School Diploma, 1999.
-      </pre>
     </div>
   </section>
 </body>

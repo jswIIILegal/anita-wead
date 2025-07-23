@@ -6,37 +6,95 @@
   <title>Culbertson Row, Letterkenny Township</title>
   <link rel="stylesheet" href="style.css">
 </head>
+    <style>
+    /* Dropdown menu styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-toggle {
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      background-color: var(--btn-bg);
+      border-radius: 8px;
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      min-width: 200px;
+      z-index: 1000;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.6rem 1.2rem;
+      color: var(--btn-text);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--btn-bg-hover);
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+
 <body>
 
   <!-- Logo and Signature -->
   <div style="text-align:center; margin: 2rem auto;">
     <img src="wead-logo.png" alt="wead.ai logo" style="max-width:200px; height:auto; display:block; margin: 0 auto 1rem;" />
-    <div style="font-family: serif; font-size: 1.05rem; margin-bottom:1.5rem;">
-      <strong>James Scott Wead III</strong><br>
-      <a href="mailto:jimmy@wead.ai" style="color:#2a1a0a; text-decoration:none;">jimmy@wead.ai</a>
+    <div style="margin-bottom:1.5rem;">
+      <div style="font-family:'EB Garamond', Georgia, serif; font-size:1.6rem; font-weight:bold;">James Scott Wead III</div>
+      <div style="font-family:'Courier New', monospace; font-size:1rem; margin-top:0.4rem;">
+        <a href="mailto:jimmy@wead.ai" style="color:#2a1a0a; text-decoration:none;">jimmy@wead.ai</a>
+      </div>
     </div>
   </div>
 
-  <header class="hero">
-    <h1>From the Edge of the Alleghenies</h1>
-    <!-- tagline removed as requested -->
-    <nav class="cta-buttons">
-      <a href="resume.html">View Résumé</a>
-      <a href="projects.html">Special Projects</a>
-      <a href="family-history.html">Explore Frontier Lineage</a>
-    </nav>
-  </header>
-
   <main>
-  <p style="text-align:center;margin-top:3rem;font-size:1.1rem;color:var(--ink-mid);">
-  Welcome to a living documentary of the Wead family.  
-  Explore the stories, documents, and photographs that chart our journey from
-  colonial Pennsylvania to the plains of Ohio and beyond.
-</p>
+    <p style="text-align:center;margin-top:3rem;font-size:1.1rem;color:var(--ink-mid);">
+      Welcome to a living documentary of the Wead family. Explore the stories, documents, and photographs that chart our journey from colonial Pennsylvania to the plains of Ohio and beyond.
+    </p>
 
-<p style="text-align:center; font-style: italic; color: var(--ink-mid); margin-top: 1rem;">
-  Founded July 2025 • This archive is a living work in progress.
-</p>
+    <p style="text-align:center; font-style: italic; color: var(--ink-mid); margin-top: 1rem;">
+      Founded July 2025 • This archive is a living work in progress.
+    </p>
+
+    <header class="hero">
+      <h1>Colonial Roots and Frontier Legacy</h1>
+      <nav class="cta-buttons">
+        <a href="resume.html">View Résumé</a>
+        <a href="projects.html">Special Projects</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Explore Frontier Lineage</a>
+          <div class="dropdown-content">
+            <a href="tree.html">My Family Tree</a>
+            <a href="wead.html">Wead Family</a>
+            <a href="schirmer.html">Schirmer Family</a>
+            <a href="trimmer.html">Trimmer Family</a>
+            <a href="ayers.html">Ayers Family</a>
+            <a href="waschow.html">Waschow Family</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
   </main>
 
   <script src="script.js"></script>

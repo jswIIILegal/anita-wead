@@ -1,71 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Scott Wead III – Legacy</title>
-    <!--
-      The page intentionally uses a light, parchment‑inspired palette with
-      steel‑blue accents to evoke both antiquity and quiet strength.  It
-      relies on a separate stylesheet (style.css) for most of the layout
-      details so the markup stays clean and easy to follow.  The
-      top‑right badge links to the Defenders of Freedom site as
-      requested and includes a tooltip for screen readers.
-    -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Weads of the American Frontier</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <!-- Centre the family crest above the name -->
-        <img src="wead.ai_logo.png" alt="wead.ai logo" class="logo" />
-        <h1>James Scott Wead III</h1>
-        <p class="tagline">A Legacy of American Pioneering and Service</p>
-        <!-- Small badge linking to Defenders of Freedom -->
-        <a href="https://www.defendersoffreedom.us" class="veterans-badge" title="Honoring U.S. Veterans">
-            <img src="defenders_of_freedom.png" alt="Defenders of Freedom" />
-        </a>
-    </header>
-
-    <section class="resume-section">
-        <div class="resume-buttons">
-            <!-- Provide both download and inline view of the résumé -->
-            <a href="James_Scott_Wead_III_resume.pdf" class="btn" download>Download Résumé (PDF)</a>
-            <button id="viewResumeBtn" class="btn secondary">View Full Résumé</button>
-        </div>
-        <div id="resumeViewer" class="hidden">
-            <!-- Embed will only show when toggled; height set for comfortable reading -->
-            <embed src="James_Scott_Wead_III_resume.pdf" type="application/pdf" width="100%" height="600px" />
-        </div>
-    </section>
-
-    <!--
-      Secret gallery section.  Renamed to “Memories” and
-      presented as a coming‑soon banner until the user unlocks it with
-      the correct password.  All A.N.I.T.A. branding has been removed to
-      keep the focus on family and shared experiences.  Once unlocked,
-      gallery content can be added by dropping images into the script.
-    -->
-    <section class="gallery-banner">
-        <p>COMING SOON: <strong># Memories #</strong> 🐬 Version 3.0</p>
-        <p>Private moments from our family history will appear here.</p>
-        <form id="passwordForm">
-            <input type="password" id="passwordInput" placeholder="Enter password to view photos" autocomplete="off" />
-            <button type="submit" class="btn">Submit</button>
-        </form>
-        <p id="errorMessage" class="error hidden">Incorrect password. Please try again.</p>
-        <div id="gallery" class="gallery hidden"></div>
-    </section>
-
-    <!-- Placeholder for future archival content -->
-    <section class="archive-placeholder">
-        <p>Coming Soon: A Legacy Begins in 1710 – John Wade of Letterkenny Township</p>
-    </section>
-
-    <footer>
-        <img src="wead.ai_logo.png" alt="wead.ai logo" class="logo" />
-        <p>wead.ai</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <!-- Landing page introduces the cinematic narrative.  A hero banner
+       sets the tone with a simple tagline and clear calls to action. -->
+  <header class="hero">
+    <h1>The Weads of the American Frontier</h1>
+    <p class="tagline">Building Trust. Closing Deals. Preserving Legacy.</p>
+    <nav class="cta-buttons">
+      <a href="resume.html">View Résumé</a>
+      <a href="projects.html">Enter Projects</a>
+      <a href="family-history.html">Explore Frontier Lineage</a>
+    </nav>
+  </header>
+  <main>
+    <p style="text-align:center;margin-top:3rem;font-size:1.1rem;color:var(--ink-mid);">Welcome to a living documentary of the Wead family.  Explore the
+      stories, documents, and photographs that chart our journey from
+      colonial Pennsylvania to the plains of Ohio and beyond.</p>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>

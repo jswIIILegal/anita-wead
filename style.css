@@ -1,190 +1,196 @@
 /*
- * Global styles for the Wead.ai legacy home page.
+ * Cinematic Wead Family Website Styles
  *
- * The palette draws on light parchment (#fdfcf8) for the background,
- * complemented by steel‑blue (#3b4d65) and deep navy (#0a2342)
- * accents.  Typography uses the Inter font or a clean sans‑serif
- * fallback to keep the page readable at all sizes.
+ * This stylesheet defines a warm, historical aesthetic for a multi‑page
+ * website exploring the Wead lineage.  A parchment texture provides
+ * atmosphere while elegant typography and generous spacing make the
+ * content feel like a thoughtfully printed book.  Colours are drawn
+ * from sepia inks and aged paper.  Buttons are styled to recall
+ * leather binding—dark, rich browns with soft corners and subtle
+ * shadows.  Headings use increased letter spacing to evoke the
+ * titling of an old film reel.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap');
+
+:root {
+  /* Ink tones */
+  --ink-dark: #2a1a0a;
+  --ink-mid: #4d3823;
+  --ink-light: #7d6650;
+  /* Accent */
+  --accent: #8b5e34;
+  /* Button colours */
+  --btn-bg: #6f4b2b;
+  --btn-bg-hover: #8c6240;
+  --btn-text: #f5f0e6;
+}
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #fdfcf8;
-    color: #1f2a44;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+  font-family: 'EB Garamond', Georgia, serif;
+  background: url('parchment_texture.png') repeat center center fixed;
+  color: var(--ink-dark);
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
 }
 
-/* Header */
-header {
-    text-align: center;
-    padding: 40px 20px;
-    position: relative;
+header.hero {
+  text-align: center;
+  padding: 8rem 1rem;
+  background: rgba(255,255,255,0.6);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.4) 100%);
 }
 
-header .logo {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 20px;
-    display: block;
+header.hero h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--ink-dark);
 }
 
-header h1 {
-    margin: 0 0 10px;
-    font-size: 2rem;
-    font-weight: 700;
+header.hero p.tagline {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--ink-mid);
 }
 
-header .tagline {
-    font-size: 1rem;
-    color: #3b4d65;
-    margin-bottom: 30px;
+nav.cta-buttons {
+  margin-top: 2.5rem;
 }
 
-header .veterans-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+nav.cta-buttons a {
+  display: inline-block;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 0.8rem 1.8rem;
+  margin: 0.5rem;
+  border-radius: 32px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  transition: background-color 0.2s, transform 0.2s;
 }
 
-header .veterans-badge img {
-    width: 40px;
-    height: 40px;
+nav.cta-buttons a:hover {
+  background-color: var(--btn-bg-hover);
+  transform: translateY(-2px);
 }
 
-/* Resume section */
-.resume-section {
-    text-align: center;
-    margin: 40px 20px;
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
 }
 
-.resume-section .resume-buttons {
-    margin-bottom: 20px;
+section.act {
+  margin: 3rem 0;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #0a2342;
-    color: #ffffff;
-    padding: 12px 24px;
-    border-radius: 30px;
-    margin: 10px 5px;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
-    font-size: 0.95rem;
+section.act h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--ink-dark);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.3rem;
 }
 
-.btn.secondary {
-    background-color: #e6ecf4;
-    color: #0a2342;
+section.act p {
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+  color: var(--ink-mid);
+  text-align: justify;
 }
 
-.btn:hover {
-    box-shadow: 0 0 8px rgba(59, 77, 101, 0.4);
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--accent), transparent);
+  margin: 2.5rem 0;
 }
 
-.hidden {
-    display: none;
+/* Projects page */
+.projects-container {
+  text-align: center;
+  margin-top: 4rem;
 }
 
-/* Gallery banner */
-.gallery-banner {
-    background-color: #f5f7fb;
-    padding: 40px 20px;
-    text-align: center;
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
+.projects-container input[type="password"] {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--ink-light);
+  border-radius: 6px;
+  width: 220px;
+  max-width: 80%;
 }
 
-.gallery-banner p {
-    margin: 5px 0;
+.projects-container button {
+  display: inline-block;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 30px;
+  margin-left: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.gallery-banner form {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
+.projects-container button:hover {
+  background-color: var(--btn-bg-hover);
 }
 
-.gallery-banner input[type="password"] {
-    flex: 1;
-    min-width: 220px;
-    padding: 10px;
-    font-size: 0.9rem;
-    border: 1px solid #c4cbd3;
-    border-radius: 4px;
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.gallery {
-    margin-top: 20px;
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+#gallery img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.25s;
 }
 
-.gallery img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
+#gallery img:hover {
+  transform: scale(1.02);
 }
 
-.gallery img:hover {
-    transform: scale(1.03);
+.error-message {
+  color: #c4554d;
+  margin-top: 0.8rem;
+  font-style: italic;
 }
 
-.error {
-    color: #d9534f;
-    margin-top: 10px;
-    text-align: center;
+/* Resume page */
+.resume-wrapper {
+  margin-top: 3rem;
+  text-align: center;
 }
 
-/* Archive placeholder */
-.archive-placeholder {
-    text-align: center;
-    padding: 40px 20px;
-    font-style: italic;
-    color: #3b4d65;
+.resume-wrapper embed {
+  border: 1px solid var(--ink-light);
+  border-radius: 8px;
 }
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-top: 1px solid #e0e0e0;
+.resume-wrapper .btn-toggle {
+  display: inline-block;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 0.6rem 1.4rem;
+  border-radius: 30px;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-footer .logo {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 5px;
-    display: block;
-}
-
-footer p {
-    margin: 0;
-    color: #33475b;
-    font-size: 0.9rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.6rem;
-    }
-    .tagline {
-        font-size: 0.9rem;
-    }
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.85rem;
-    }
+.resume-wrapper .btn-toggle:hover {
+  background-color: var(--btn-bg-hover);
 }

@@ -1,66 +1,83 @@
-document.addEventListener('DOMContentLoaded', function () {
+//
+// Client‑side behaviour for the Wead.ai legacy home page.
+//
+// This script toggles the embedded résumé viewer and controls access
+// to the private photo gallery.  A simple password (stored in a
+// constant) unlocks the gallery and persists the state in
+// localStorage so repeat visitors don’t need to re‑enter the
+// password.  When unlocked the gallery currently displays a
+// placeholder message; drop image filenames into the images array to
+// populate it with actual content.
+
+document.addEventListener('DOMContentLoaded', () => {
+    const viewBtn = document.getElementById('viewResumeBtn');
+    const resumeViewer = document.getElementById('resumeViewer');
+    const passwordForm = document.getElementById('passwordForm');
     const passwordInput = document.getElementById('passwordInput');
     const errorMessage = document.getElementById('errorMessage');
     const gallery = document.getElementById('gallery');
-    const resumeViewer = document.getElementById('resumeViewer');
-    const viewOnlineBtn = document.getElementById('viewOnlineBtn');
+
+    // Update this constant to change the gallery password.
     const CORRECT_PASSWORD = 'felicita';
 
-    function showGallery() {
-        // Prevent loading twice
-        if (gallery.childElementCount > 0) return;
-        const images = [
-            'photos/gallery1.png',
-            'photos/gallery2.png',
-            'photos/gallery3.png'
-        ];
-        images.forEach(function (src) {
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = 'Photo';
-            gallery.appendChild(img);
+    // Toggle the résumé viewer on button click.
+    if (viewBtn) {
+        viewBtn.addEventListener('click', () => {
+            if (resumeViewer.classList.contains('hidden')) {
+                resumeViewer.classList.remove('hidden');
+                viewBtn.textContent = 'Hide Online';
+            } else {
+                resumeViewer.classList.add('hidden');
+                viewBtn.textContent = 'View Full Résumé';
+            }
         });
-        // Hide password form and error message
-        const formElement = document.getElementById('passwordForm');
-        if (formElement) {
-            formElement.classList.add('hidden');
-        }
-        const errorElem = document.getElementById('errorMessage');
-        if (errorElem) {
-            errorElem.classList.add('hidden');
-        }
     }
 
-    // Unlock automatically if previously unlocked
+    // Automatically unlock gallery if previously unlocked
     if (localStorage.getItem('galleryUnlocked') === 'true') {
-        showGallery();
+        unlockGallery();
     }
 
-    const form = document.getElementById('passwordForm');
-    if (form) {
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
+    // Handle password form submission
+    if (passwordForm) {
+        passwordForm.addEventListener('submit', (event) => {
+            event.preventDefault();
             const entered = passwordInput.value.trim();
             if (entered === CORRECT_PASSWORD) {
                 localStorage.setItem('galleryUnlocked', 'true');
-                showGallery();
+                unlockGallery();
             } else {
                 errorMessage.classList.remove('hidden');
             }
+            // Clear the field regardless of correctness
             passwordInput.value = '';
         });
     }
 
-    // Toggle resume viewer
-    if (viewOnlineBtn) {
-        viewOnlineBtn.addEventListener('click', function () {
-            if (resumeViewer.classList.contains('hidden')) {
-                resumeViewer.classList.remove('hidden');
-                viewOnlineBtn.textContent = 'Hide Online';
+    function unlockGallery() {
+        if (passwordForm) {
+            // Hide the password form completely once unlocked.  Using
+            // inline styles here ensures the form disappears even if
+            // utility classes are overridden elsewhere.
+            passwordForm.classList.add('hidden');
+            passwordForm.style.display = 'none';
+        }
+        if (errorMessage) errorMessage.classList.add('hidden');
+        if (gallery) {
+            gallery.classList.remove('hidden');
+            // Define images here if available; otherwise display a placeholder
+            const images = [];
+            if (images.length === 0) {
+                gallery.innerHTML = '<p>Personal memories will appear here.</p>';
             } else {
-                resumeViewer.classList.add('hidden');
-                viewOnlineBtn.textContent = 'View Online';
+                gallery.innerHTML = '';
+                images.forEach(src => {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = 'Photo';
+                    gallery.appendChild(img);
+                });
             }
-        });
+        }
     }
 });

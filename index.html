@@ -1,53 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Scott Wead III – Résumé</title>
-    <!-- Open Graph Metadata -->
-    <meta property="og:title" content="James Scott Wead III Résumé">
-    <meta property="og:description" content="A brief professional profile and history.">
-    <!-- Omitting og:image prevents preview thumbnails -->
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <title>James Scott Wead III – Legacy</title>
+    <!--
+      The page intentionally uses a light, parchment‑inspired palette with
+      steel‑blue accents to evoke both antiquity and quiet strength.  It
+      relies on a separate stylesheet (style.css) for most of the layout
+      details so the markup stays clean and easy to follow.  The
+      top‑right badge links to the Defenders of Freedom site as
+      requested and includes a tooltip for screen readers.
+    -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <img src="header.png" alt="Decorative pattern" class="header-image">
-        <h1>James Scott Wead III – Résumé</h1>
-        <p class="tagline">Design &amp; Build Manager | Structural Steel | Legal Forensics &amp; Investigations (2025)</p>
-        <div class="resume-buttons">
-            <a href="James_Scott_Wead_III_resume.pdf" class="btn" download>Download Résumé (PDF)</a>
-            <button id="viewOnlineBtn" class="btn secondary">View Online</button>
-        </div>
-        <div id="resumeViewer" class="hidden">
-            <!-- Embedded PDF viewer appears when user clicks "View Online" -->
-            <embed src="James_Scott_Wead_III_resume.pdf" type="application/pdf" width="100%" height="600px" />
-        </div>
+        <!-- Centre the family crest above the name -->
+        <img src="wead.ai_logo.png" alt="wead.ai logo" class="logo" />
+        <h1>James Scott Wead III</h1>
+        <p class="tagline">A Legacy of American Pioneering and Service</p>
+        <!-- Small badge linking to Defenders of Freedom -->
+        <a href="https://www.defendersoffreedom.us" class="veterans-badge" title="Honoring U.S. Veterans">
+            <img src="defenders_of_freedom.png" alt="Defenders of Freedom" />
+        </a>
     </header>
 
-    <section class="anita-banner">
-        <p>COMING SOON: # A.N.I.T.A. # 🐬 Version 3.0 (2025) 🔍</p>
-        <p>3.0 stronger than ever — A.N.I.T.A. 2025! Let’s go!</p>
+    <section class="resume-section">
+        <div class="resume-buttons">
+            <!-- Provide both download and inline view of the résumé -->
+            <a href="James_Scott_Wead_III_resume.pdf" class="btn" download>Download Résumé (PDF)</a>
+            <button id="viewResumeBtn" class="btn secondary">View Full Résumé</button>
+        </div>
+        <div id="resumeViewer" class="hidden">
+            <!-- Embed will only show when toggled; height set for comfortable reading -->
+            <embed src="James_Scott_Wead_III_resume.pdf" type="application/pdf" width="100%" height="600px" />
+        </div>
     </section>
 
-    <section class="photo-gallery-section">
-        <h2>Password-Protected Photo Gallery <span class="small">(Just for Anita ❤️)</span></h2>
+    <!--
+      Secret gallery section.  Renamed to “Memories” and
+      presented as a coming‑soon banner until the user unlocks it with
+      the correct password.  All A.N.I.T.A. branding has been removed to
+      keep the focus on family and shared experiences.  Once unlocked,
+      gallery content can be added by dropping images into the script.
+    -->
+    <section class="gallery-banner">
+        <p>COMING SOON: <strong># Memories #</strong> 🐬 Version 3.0</p>
+        <p>Private moments from our family history will appear here.</p>
         <form id="passwordForm">
             <input type="password" id="passwordInput" placeholder="Enter password to view photos" autocomplete="off" />
             <button type="submit" class="btn">Submit</button>
         </form>
-        <p id="errorMessage" class="error hidden">Incorrect password. Please try again.</p>
-        <div id="gallery" class="gallery"></div>
+        <p id="errorMessage" class="error hidden">Incorrect password. Please try again.</p>
+        <div id="gallery" class="gallery hidden"></div>
+    </section>
+
+    <!-- Placeholder for future archival content -->
+    <section class="archive-placeholder">
+        <p>Coming Soon: A Legacy Begins in 1710 – John Wade of Letterkenny Township</p>
     </section>
 
     <footer>
-        <img src="header.png" alt="wead.ai logo" class="logo">
+        <img src="wead.ai_logo.png" alt="wead.ai logo" class="logo" />
         <p>wead.ai</p>
     </footer>
 

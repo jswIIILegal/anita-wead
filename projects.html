@@ -3,24 +3,49 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anita Photo Archive – Wead Projects</title>
+  <title>Project Hipka</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <header class="hero">
-    <h1>Anita Photo Archive</h1>
-    <p class="tagline">Private moments from our family history</p>
+    <h1>Project Hipka</h1>
+    <p class="tagline">This section is password-protected.</p>
   </header>
+
   <main class="projects-container">
     <p id="galleryPrompt">Enter the password to unlock the gallery.</p>
     <form id="passwordForm">
       <input type="password" id="projectPassword" placeholder="Password" autocomplete="off" />
       <button type="submit">Unlock</button>
     </form>
-    <p id="passwordError" class="error-message" style="display:none;">Incorrect password.  Please try again.</p>
-    <div id="gallery" style="display:none;"></div>
-    <p style="margin-top:2rem;"><a href="index.html" style="color:var(--accent);text-decoration:underline;">Back to landing page</a></p>
+
+    <p id="passwordError" class="error-message" style="display:none;">Incorrect password. Please try again.</p>
+
+    <div id="gallery" style="display:none;">
+      <!-- 🔒 Private content goes here -->
+    </div>
+
+    <p style="margin-top:2rem;">
+      <a href="index.html" style="color:var(--accent); text-decoration:underline;">Back to landing page</a>
+    </p>
   </main>
-  <script src="script.js"></script>
+
+  <script>
+    document.getElementById('passwordForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const input = document.getElementById('projectPassword').value;
+      const error = document.getElementById('passwordError');
+      if (input === 'felicita') {
+        document.getElementById('passwordForm').style.display = 'none';
+        document.getElementById('galleryPrompt').style.display = 'none';
+        document.getElementById('gallery').style.display = 'block';
+        error.style.display = 'none';
+      } else {
+        error.style.display = 'block';
+      }
+    });
+  </script>
+
 </body>
 </html>

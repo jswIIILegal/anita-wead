@@ -3,48 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Hipka</title>
+  <title>Special Projects</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header class="hero">
-    <h1>Project Hipka</h1>
-    <p class="tagline">This section is password-protected.</p>
+    <h1>Special Projects</h1>
+    <p class="tagline">Private access only.</p>
   </header>
 
-  <main class="projects-container">
-    <p id="galleryPrompt">Enter the password to unlock the gallery.</p>
-    <form id="passwordForm">
-      <input type="password" id="projectPassword" placeholder="Password" autocomplete="off" />
-      <button type="submit">Unlock</button>
-    </form>
-
-    <p id="passwordError" class="error-message" style="display:none;">Incorrect password. Please try again.</p>
-
-    <div id="gallery" style="display:none;">
-      <!-- 🔒 Private content goes here -->
-    </div>
-
-    <p style="margin-top:2rem;">
-      <a href="index.html" style="color:var(--accent); text-decoration:underline;">Back to landing page</a>
-    </p>
+  <main>
+    <section id="project-hipka" style="margin-top:3rem;">
+      <h2>Project Hipka</h2>
+      <div id="hipka-lock">
+        <label for="hipka-pass">Password:</label>
+        <input type="password" id="hipka-pass">
+        <button onclick="unlockHipka()">Unlock</button>
+        <p id="hipka-error" style="color:red; display:none;">Incorrect password.</p>
+      </div>
+      <div id="hipka-content" style="display:none; margin-top:1rem;">
+        <!-- Add private content here -->
+      </div>
+    </section>
   </main>
 
   <script>
-    document.getElementById('passwordForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const input = document.getElementById('projectPassword').value;
-      const error = document.getElementById('passwordError');
-      if (input === 'felicita') {
-        document.getElementById('passwordForm').style.display = 'none';
-        document.getElementById('galleryPrompt').style.display = 'none';
-        document.getElementById('gallery').style.display = 'block';
+    function unlockHipka() {
+      const pass = document.getElementById('hipka-pass').value;
+      const error = document.getElementById('hipka-error');
+      if (pass === 'felicita') {
+        document.getElementById('hipka-lock').style.display = 'none';
+        document.getElementById('hipka-content').style.display = 'block';
         error.style.display = 'none';
       } else {
         error.style.display = 'block';
       }
-    });
+    }
   </script>
 
 </body>

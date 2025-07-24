@@ -1,225 +1,229 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
     This page has been updated to move the résumé section above the A.N.I.T.A.
     gallery and to add a simple password gate on the photo grid.  When the
     Coming Soon section is expanded the visitor will be asked for a password
     ("felicita") before the pictures are revealed.  The toggle and
     password‑check logic lives in the embedded script below.
   -->
-  <title>James Scott Wead III – Professional Résumé &amp; A.N.I.T.A. Gallery</title>
-  <style>
-    /* Base styling */
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      color: #333;
-      background: #fafafa;
-    }
-
-    /* Header styling */
-    header {
-      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header img {
-      max-width: 220px;
-      height: auto;
-      display: block;
-      margin: 0 auto 15px auto;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-      color: #0d47a1;
-    }
-    header p {
-      font-size: 1.2em;
-      margin-top: 8px;
-      color: #0d47a1;
-    }
-
-    /* Section styling */
-    section {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    section h2 {
-      font-size: 2em;
-      color: #0d47a1;
-      margin-top: 0;
-    }
-
-    /* Toggle button styling */
-    .toggle-button {
-      width: 100%;
-      background: #cfe3f9;
-      border: none;
-      padding: 14px 18px;
-      font-size: 1.1em;
-      font-weight: bold;
-      color: #0d47a1;
-      cursor: pointer;
-      border-radius: 6px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-      transition: background 0.3s ease;
-    }
-    .toggle-button:hover {
-      background: #b6d5f2;
-    }
-    .arrow::before {
-      content: '\25B6'; /* Right‑pointing triangle */
-      display: inline-block;
-      transition: transform 0.3s ease;
-      font-size: 1.2em;
-    }
-    .arrow.expanded::before {
-      transform: rotate(90deg);
-    }
-    .hidden {
-      display: none;
-    }
-
-    /* Gallery styling */
-    .photo-grid {
-      display: grid;
-      /* Set a minimum width to encourage three images per row on larger screens */
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 10px;
-      margin-top: 20px;
-    }
-    .photo-grid img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    /* Résumé section styling */
-    #resume {
-      background: #f5f5f5;
-      border-radius: 8px;
-      padding: 30px 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    #resume h2 {
-      margin-top: 0;
-    }
-    .download-button {
-      display: inline-block;
-      margin-bottom: 15px;
-      padding: 10px 16px;
-      background: #0d47a1;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-    .download-button:hover {
-      background: #08306b;
-    }
-    pre {
-      white-space: pre-wrap;
-      font-family: 'Courier New', monospace;
-      font-size: 0.9em;
-      background: #fff;
-      padding: 15px;
-      border-radius: 6px;
-      border: 1px solid #ddd;
-      overflow-x: auto;
-    }
-
-    /* Coming soon tagline styling */
-    .coming-intro {
-      font-style: italic;
-      color: #555;
-      margin-bottom: 20px;
-    }
-    /* Password gate styling */
-    #password-container {
-      margin-top: 20px;
-    }
-    #password-container input[type="password"] {
-      padding: 8px;
-      font-size: 1em;
-      margin-right: 8px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-    }
-    #password-container button {
-      padding: 8px 12px;
-      font-size: 1em;
-      background: #0d47a1;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    #password-container button:hover {
-      background: #08306b;
-    }
-  </style>
-  <script>
-    // Toggle function for collapsible sections
-    function toggleSection(sectionId) {
-      var content = document.getElementById(sectionId);
-      var arrow = document.getElementById(sectionId + '-arrow');
-      if (content) {
-        content.classList.toggle('hidden');
+    <title>
+      James Scott Wead III – Professional Résumé &amp; A.N.I.T.A. Gallery
+    </title>
+    <style>
+      /* Base styling */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        color: #333;
+        background: #fafafa;
       }
-      if (arrow) {
-        arrow.classList.toggle('expanded');
-      }
-    }
 
-    // Password check for the photo gallery.  When the correct password is entered
-    // (case‑insensitive match on "felicita"), the password prompt disappears and
-    // the gallery becomes visible.  Incorrect entries trigger a simple alert.
-    function checkPassword() {
-      var inputField = document.getElementById('photo-password');
-      var entered = (inputField.value || '').trim().toLowerCase();
-      if (entered === 'felicita') {
-        // Hide the password container and reveal the photo grid
-        var passwordContainer = document.getElementById('password-container');
-        var photoGrid = document.getElementById('photo-grid');
-        if (passwordContainer) passwordContainer.style.display = 'none';
-        if (photoGrid) photoGrid.classList.remove('hidden');
-      } else {
-        alert('Incorrect password!');
+      /* Header styling */
+      header {
+        background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+        padding: 40px 20px;
+        text-align: center;
       }
-      // Clear the input so the next attempt starts fresh
-      if (inputField) inputField.value = '';
-    }
-  </script>
-</head>
-<body>
-  <!-- Header with logo and title -->
-  <header>
-    <img src="wead.ai_logo.png" alt="Wead.ai logo">
-    <h1>James Scott Wead III</h1>
-    <p>Professional Résumé</p>
-  </header>
+      header img {
+        max-width: 220px;
+        height: auto;
+        display: block;
+        margin: 0 auto 15px auto;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        color: #0d47a1;
+      }
+      header p {
+        font-size: 1.2em;
+        margin-top: 8px;
+        color: #0d47a1;
+      }
 
-  <!-- Résumé Section moved above the ANITA gallery -->
-  <section id="resume">
-    <h2>Professional Résumé</h2>
-    <a href="James_Scott_Wead_III_resume.pdf" download class="download-button">Download Résumé (PDF)</a>
-    <button class="toggle-button" onclick="toggleSection('resume-content')">
-      <span>Full Résumé</span>
-      <span id="resume-content-arrow" class="arrow"></span>
-    </button>
-    <div id="resume-content" class="hidden">
-      <pre>
+      /* Section styling */
+      section {
+        padding: 40px 20px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      section h2 {
+        font-size: 2em;
+        color: #0d47a1;
+        margin-top: 0;
+      }
+
+      /* Toggle button styling */
+      .toggle-button {
+        width: 100%;
+        background: #cfe3f9;
+        border: none;
+        padding: 14px 18px;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #0d47a1;
+        cursor: pointer;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        transition: background 0.3s ease;
+      }
+      .toggle-button:hover {
+        background: #b6d5f2;
+      }
+      .arrow::before {
+        content: "\25B6"; /* Right‑pointing triangle */
+        display: inline-block;
+        transition: transform 0.3s ease;
+        font-size: 1.2em;
+      }
+      .arrow.expanded::before {
+        transform: rotate(90deg);
+      }
+      .hidden {
+        display: none;
+      }
+
+      /* Gallery styling */
+      .photo-grid {
+        display: grid;
+        /* Set a minimum width to encourage three images per row on larger screens */
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .photo-grid img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Résumé section styling */
+      #resume {
+        background: #f5f5f5;
+        border-radius: 8px;
+        padding: 30px 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      #resume h2 {
+        margin-top: 0;
+      }
+      .download-button {
+        display: inline-block;
+        margin-bottom: 15px;
+        padding: 10px 16px;
+        background: #0d47a1;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+      .download-button:hover {
+        background: #08306b;
+      }
+      pre {
+        white-space: pre-wrap;
+        font-family: "Courier New", monospace;
+        font-size: 0.9em;
+        background: #fff;
+        padding: 15px;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        overflow-x: auto;
+      }
+
+      /* Coming soon tagline styling */
+      .coming-intro {
+        font-style: italic;
+        color: #555;
+        margin-bottom: 20px;
+      }
+      /* Password gate styling */
+      #password-container {
+        margin-top: 20px;
+      }
+      #password-container input[type="password"] {
+        padding: 8px;
+        font-size: 1em;
+        margin-right: 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+      #password-container button {
+        padding: 8px 12px;
+        font-size: 1em;
+        background: #0d47a1;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      #password-container button:hover {
+        background: #08306b;
+      }
+    </style>
+    <script>
+      // Toggle function for collapsible sections
+      function toggleSection(sectionId) {
+        var content = document.getElementById(sectionId);
+        var arrow = document.getElementById(sectionId + "-arrow");
+        if (content) {
+          content.classList.toggle("hidden");
+        }
+        if (arrow) {
+          arrow.classList.toggle("expanded");
+        }
+      }
+
+      // Password check for the photo gallery.  When the correct password is entered
+      // (case‑insensitive match on "felicita"), the password prompt disappears and
+      // the gallery becomes visible.  Incorrect entries trigger a simple alert.
+      function checkPassword() {
+        var inputField = document.getElementById("photo-password");
+        var entered = (inputField.value || "").trim().toLowerCase();
+        if (entered === "felicita") {
+          // Hide the password container and reveal the photo grid
+          var passwordContainer = document.getElementById("password-container");
+          var photoGrid = document.getElementById("photo-grid");
+          if (passwordContainer) passwordContainer.style.display = "none";
+          if (photoGrid) photoGrid.classList.remove("hidden");
+        } else {
+          alert("Incorrect password!");
+        }
+        // Clear the input so the next attempt starts fresh
+        if (inputField) inputField.value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Header with logo and title -->
+    <header>
+      <img src="wead.ai_logo.png" alt="Wead.ai logo" />
+      <h1>James Scott Wead III</h1>
+      <p>Professional Résumé</p>
+    </header>
+
+    <!-- Résumé Section moved above the ANITA gallery -->
+    <section id="resume">
+      <h2>Professional Résumé</h2>
+      <a href="James_Scott_Wead_III_resume.pdf" download class="download-button"
+        >Download Résumé (PDF)</a
+      >
+      <button class="toggle-button" onclick="toggleSection('resume-content')">
+        <span>Full Résumé</span>
+        <span id="resume-content-arrow" class="arrow"></span>
+      </button>
+      <div id="resume-content" class="hidden">
+        <pre>
     James Scott Wead III
     847&nbsp;809-8313&nbsp;·&nbsp;jimmy@wead.ai&nbsp;·&nbsp;Palatine, IL
 
@@ -279,43 +283,98 @@
 
     Education
     William Fremd High School, Palatine, IL — High School Diploma, 1999.
-      </pre>
-    </div>
-  </section>
+      </pre
+        >
+      </div>
+    </section>
 
-  <!-- Coming Soon ANITA section with password-protected photo gallery -->
-  <section id="coming-soon">
-    <button class="toggle-button" onclick="toggleSection('coming-content')">
-      <!-- Use HTML numeric codes for emojis to ensure they persist when rendered on GitHub -->
-      <span>COMING SOON: # A.N.I.T.A. # &#x1F42C; Version 3.0 (2025) &#x1F50D;</span>
-      <span id="coming-content-arrow" class="arrow"></span>
-    </button>
-    <div id="coming-content" class="hidden">
-      <p class="coming-intro">3.0 stronger than ever — A.N.I.T.A. 2025! Let’s go!</p>
-      <!-- Password prompt inserted here.  Once the correct password is entered, this container is hidden and the gallery is shown. -->
-      <div id="password-container">
-        <input type="password" id="photo-password" placeholder="Enter password to view photos">
-        <button onclick="checkPassword()">Submit</button>
+    <!-- Coming Soon ANITA section with password-protected photo gallery -->
+    <section id="coming-soon">
+      <button class="toggle-button" onclick="toggleSection('coming-content')">
+        <!-- Use HTML numeric codes for emojis to ensure they persist when rendered on GitHub -->
+        <span
+          >COMING SOON: # A.N.I.T.A. # &#x1F42C; Version 3.0 (2025)
+          &#x1F50D;</span
+        >
+        <span id="coming-content-arrow" class="arrow"></span>
+      </button>
+      <div id="coming-content" class="hidden">
+        <p class="coming-intro">
+          3.0 stronger than ever — A.N.I.T.A. 2025! Let’s go!
+        </p>
+        <!-- Password prompt inserted here.  Once the correct password is entered, this container is hidden and the gallery is shown. -->
+        <div id="password-container">
+          <input
+            type="password"
+            id="photo-password"
+            placeholder="Enter password to view photos"
+          />
+          <button onclick="checkPassword()">Submit</button>
+        </div>
+        <!-- Photo grid remains hidden until the correct password is entered -->
+        <div id="photo-grid" class="photo-grid hidden">
+          <img
+            src="hipka/photo_2025-07-16_00-59-43.jpg"
+            alt="Couple enjoying a day on the water"
+          />
+          <img
+            src="hipka/photo_2025-07-16_00-59-44.jpg"
+            alt="Smiling couple posing together"
+          />
+          <img
+            src="hipka/photo_2025-07-16_00-59-45.jpg"
+            alt="Love is in the air collage"
+          />
+          <img
+            src="hipka/20220608_160009057_iOS.jpg"
+            alt="Couple hugging on the couch"
+          />
+          <img
+            src="hipka/GNZP4995.JPEG"
+            alt="Jet ski adventure with dome structures in background"
+          />
+          <img
+            src="6f9c256b-2319-4649-8240-25976d902ac6.png"
+            alt="Couple by the water on jet ski"
+          />
+          <img
+            src="ed7c8272-6db4-409c-b9fe-beb407d622c2.png"
+            alt="Smiling couple with boat backdrop"
+          />
+          <img
+            src="b59f95bc-73cf-4f73-aa1b-3d5fd27a7f1f.png"
+            alt="Couple with hearts frame and message Love is in the Air"
+          />
+          <img
+            src="e7025694-c620-4be8-9b7b-c97214a2122b.png"
+            alt="Couple hugging near painting"
+          />
+          <img
+            src="e82d808d-defc-4dd9-a4b8-a473d7ef4be6.png"
+            alt="Couple riding jet ski near ruins"
+          />
+          <img
+            src="hipka/GZZL1904.JPEG"
+            alt="Jet ski ride near dome structures"
+          />
+          <img
+            src="hipka/20200610_004441861_iOS.jpg"
+            alt="Selfie of woman smiling"
+          />
+          <img
+            src="hipka/20220711_215215000_iOS.jpg"
+            alt="Couple hugging by the pool"
+          />
+          <img
+            src="4a84d245-dcc7-4d35-b8b7-a82ec6716ebc.png"
+            alt="Couple near pool in vertical orientation"
+          />
+          <img
+            src="b219cf07-7ea6-4b23-a330-0ee69a223faa.png"
+            alt="Couple having fun in the kitchen"
+          />
+        </div>
       </div>
-      <!-- Photo grid remains hidden until the correct password is entered -->
-      <div id="photo-grid" class="photo-grid hidden">
-        <img src="photo_2025-07-16_00-59-43.jpg" alt="Couple enjoying a day on the water">
-        <img src="photo_2025-07-16_00-59-44.jpg" alt="Smiling couple posing together">
-        <img src="photo_2025-07-16_00-59-45.jpg" alt="Love is in the air collage">
-        <img src="20220608_160009057_iOS.jpg" alt="Couple hugging on the couch">
-        <img src="GNZP4995.JPEG" alt="Jet ski adventure with dome structures in background">
-        <img src="6f9c256b-2319-4649-8240-25976d902ac6.png" alt="Couple by the water on jet ski">
-        <img src="ed7c8272-6db4-409c-b9fe-beb407d622c2.png" alt="Smiling couple with boat backdrop">
-        <img src="b59f95bc-73cf-4f73-aa1b-3d5fd27a7f1f.png" alt="Couple with hearts frame and message Love is in the Air">
-        <img src="e7025694-c620-4be8-9b7b-c97214a2122b.png" alt="Couple hugging near painting">
-        <img src="e82d808d-defc-4dd9-a4b8-a473d7ef4be6.png" alt="Couple riding jet ski near ruins">
-        <img src="GZZL1904.JPEG" alt="Jet ski ride near dome structures">
-        <img src="20200610_004441861_iOS.jpg" alt="Selfie of woman smiling">
-        <img src="20220711_215215000_iOS.jpg" alt="Couple hugging by the pool">
-        <img src="4a84d245-dcc7-4d35-b8b7-a82ec6716ebc.png" alt="Couple near pool in vertical orientation">
-        <img src="b219cf07-7ea6-4b23-a330-0ee69a223faa.png" alt="Couple having fun in the kitchen">
-      </div>
-    </div>
-  </section>
-</body>
+    </section>
+  </body>
 </html>

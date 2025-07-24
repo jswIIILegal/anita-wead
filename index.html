@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>James Scott Wead III</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-    <style>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>James Scott Wead III</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
     /* Dropdown menu styles */
     .dropdown {
       position: relative;
@@ -25,10 +25,12 @@
       background-color: var(--btn-bg);
       border-radius: 8px;
       margin-top: 0.5rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
       min-width: 200px;
       z-index: 1000;
-      transition: opacity 0.2s ease, transform 0.2s ease;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
       opacity: 0;
       pointer-events: none;
     }
@@ -54,49 +56,187 @@
     }
   </style>
 
-<body>
-
-  <!-- Logo and Signature -->
-  <div style="text-align:center; margin: 2rem auto;">
-    <img src="wead-logo.png" alt="wead.ai logo" style="max-width:200px; height:auto; display:block; margin: 0 auto 1rem;" />
-    <div style="margin-bottom:1.5rem;">
-      <div style="font-family:'EB Garamond', Georgia, serif; font-size:1.6rem; font-weight:bold;">James Scott Wead III</div>
-      <div style="font-family:'Courier New', monospace; font-size:1rem; margin-top:0.4rem;">
-        <a href="mailto:jimmy@wead.ai" style="color:#2a1a0a; text-decoration:none;">jimmy@wead.ai</a>
-      </div>
-    </div>
-  </div>
-
-  <main>
-    <p style="text-align:center;margin-top:3rem;font-size:1.1rem;color:var(--ink-mid);">
-      Welcome to a living documentary of the Wead family. Explore the stories, documents, and photographs that chart our journey from colonial Pennsylvania to the plains of Ohio and beyond.
-    </p>
-
-    <p style="text-align:center; font-style: italic; color: var(--ink-mid); margin-top: 1rem;">
-      Founded July 2025 • This archive is a living work in progress.
-    </p>
-
-    <header class="hero">
-      <h1>Colonial Roots and Frontier Legacy</h1>
-      <nav class="cta-buttons">
-        <a href="resume.html">View Résumé</a>
-        <a href="projects.html">Special Projects</a>
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle">Explore Frontier Lineage</a>
-          <div class="dropdown-content">
-            <a href="tree.html">My Family Tree</a>
-            <a href="wead.html">Wead Family</a>
-            <a href="schirmer.html">Schirmer Family</a>
-            <a href="trimmer.html">Trimmer Family</a>
-            <a href="ayers.html">Ayers Family</a>
-            <a href="waschow.html">Waschow Family</a>
-          </div>
+  <body>
+    <!-- Full-width parchment header bar -->
+    <header
+      style="
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        background:
+          url(&quot;parchment_texture.png&quot;) repeat center center,
+          #f6ecd7;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        min-height: 70px;
+        padding: 2.5rem 2.5vw 0.5rem 2.5vw;
+      "
+    >
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          width: 100%;
+          position: relative;
+        "
+      >
+        <!-- Logo left -->
+        <div style="min-width: 180px; display: flex; align-items: flex-start">
+          <img
+            src="wead-logo.png"
+            alt="wead.ai logo"
+            style="
+              max-width: 220px;
+              height: auto;
+              display: block;
+              flex-shrink: 0;
+              border-radius: 6px;
+              box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+              margin-bottom: 0.7rem;
+              margin-top: 0.1rem;
+              margin-left: 0.1rem;
+            "
+          />
         </div>
-      </nav>
+        <!-- Name/button center -->
+        <div
+          style="
+            position: absolute;
+            left: 50%;
+            top: 0.7rem;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 220px;
+          "
+        >
+          <div
+            style="
+              font-family: &quot;EB Garamond&quot;, Georgia, serif;
+              font-size: 1.7rem;
+              font-weight: bold;
+              line-height: 1.1;
+              color: #3a2a13;
+              letter-spacing: 0.01em;
+              margin-bottom: 0.2rem;
+              text-align: center;
+              width: 100%;
+            "
+          >
+            James Scott Wead III
+          </div>
+          <a
+            href="resume.html"
+            class="cta-btn"
+            style="
+              display: inline-block;
+              padding: 0.5rem 1.1rem;
+              background: var(--btn-bg);
+              color: var(--btn-text);
+              border-radius: 20px;
+              font-size: 1.01rem;
+              font-weight: 500;
+              text-decoration: none;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+              margin-top: 0.1rem;
+              margin-left: 0;
+            "
+            >View Résumé</a
+          >
+        </div>
+      </div>
     </header>
 
-  </main>
+    <main>
+      <p
+        style="
+          text-align: center;
+          margin-top: 3rem;
+          font-size: 1.1rem;
+          color: var(--ink-mid);
+        "
+      >
+        Welcome to a living documentary of the Wead family. Explore the stories,
+        documents, and photographs that chart our journey from colonial
+        Pennsylvania to the plains of Ohio and beyond.
+      </p>
 
-  <script src="script.js"></script>
-</body>
+      <!-- Archive notice moved to footer below -->
+
+      <header class="hero">
+        <h1>Colonial Roots and Frontier Legacy</h1>
+        <nav
+          class="cta-buttons"
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            margin-top: 2.5rem;
+          "
+        >
+          <a
+            href="projects.html"
+            class="cta-btn"
+            style="
+              display: inline-block;
+              padding: 0.6rem 1.2rem;
+              background: var(--btn-bg);
+              color: var(--btn-text);
+              border-radius: 24px;
+              font-size: 0.95rem;
+              font-weight: 500;
+              text-decoration: none;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            "
+            >Special Projects</a
+          >
+          <div class="dropdown">
+            <a
+              href="#"
+              class="dropdown-toggle cta-btn"
+              style="
+                display: inline-block;
+                padding: 0.6rem 1.2rem;
+                background: var(--btn-bg);
+                color: var(--btn-text);
+                border-radius: 24px;
+                font-size: 0.95rem;
+                font-weight: 500;
+                text-decoration: none;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              "
+              >Explore Frontier Lineage</a
+            >
+            <div class="dropdown-content">
+              <a href="tree.html">My Family Tree</a>
+              <a href="wead.html">Wead Family</a>
+              <a href="schirmer.html">Schirmer Family</a>
+              <a href="trimmer.html">Trimmer Family</a>
+              <a href="ayers.html">Ayers Family</a>
+              <a href="waschow.html">Waschow Family</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </main>
+
+    <footer
+      style="
+        text-align: center;
+        font-style: italic;
+        color: var(--ink-mid);
+        margin: 2.5rem 0 1.2rem 0;
+        font-size: 1.02rem;
+      "
+    >
+      Founded July 2025 &bull; This archive is a living work in progress.
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

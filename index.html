@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>James Scott Wead III</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IM+Fell+English:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <style>
+    /* Use IM Fell English for all buttons and .cta-btn on this page */
+    button,
+    .cta-btn,
+    .dropdown-toggle,
+    .dropdown-content a {
+      font-family: "IM Fell English", "EB Garamond", Georgia, serif !important;
+    }
+    /* Ensure all nav.cta-buttons a use the same font and style as the logo */
+    nav.cta-buttons a {
+      font-family: "IM Fell English", "EB Garamond", Georgia, serif !important;
+      font-size: 1.08rem !important;
+      font-weight: 400 !important;
+      letter-spacing: 0.01em;
+    }
     /* Dropdown menu styles */
     .dropdown {
       position: relative;
@@ -57,7 +75,12 @@
     }
   </style>
 
-  <body>
+  <body
+    style="
+      font-family:
+        &quot;IM Fell English&quot;, &quot;EB Garamond&quot;, Georgia, serif;
+    "
+  >
     <!-- Full-width parchment header bar -->
     <header
       style="
@@ -119,7 +142,9 @@
         >
           <div
             style="
-              font-family: &quot;EB Garamond&quot;, Georgia, serif;
+              font-family:
+                &quot;IM Fell English&quot;, &quot;EB Garamond&quot;, Georgia,
+                serif;
               font-size: 1.7rem;
               font-weight: bold;
               line-height: 1.1;
@@ -141,12 +166,16 @@
               background: var(--btn-bg);
               color: var(--btn-text);
               border-radius: 20px;
-              font-size: 1.01rem;
-              font-weight: 500;
+              font-size: 1.08rem;
+              font-family:
+                &quot;IM Fell English&quot;, &quot;EB Garamond&quot;, Georgia,
+                serif;
+              font-weight: 400;
               text-decoration: none;
               box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-              margin-top: 0.1rem;
+              margin-top: 0.7rem;
               margin-left: 0;
+              letter-spacing: 0.01em;
             "
             >View Résumé</a
           >
@@ -155,32 +184,72 @@
     </header>
 
     <main>
-      <p
-        style="
-          text-align: center;
-          margin-top: 3rem;
-          font-size: 1.1rem;
-          color: var(--ink-mid);
-        "
-      >
-        Welcome to a living documentary of the Wead family. Explore the stories,
-        documents, and photographs that chart our journey from colonial
-        Pennsylvania to the plains of Ohio and beyond.
-      </p>
-
       <!-- Archive notice moved to footer below -->
 
       <header class="hero">
-        <h1>Colonial Roots and Frontier Legacy</h1>
+        <p
+          style="
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 2.2rem;
+            font-size: 1.1rem;
+            color: var(--ink-mid);
+          "
+        >
+          Welcome to a living documentary of the Wead family. Explore the
+          stories, documents, and photographs that chart our journey from
+          colonial Pennsylvania to the plains of Ohio and beyond.
+        </p>
         <nav
           class="cta-buttons"
           style="
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 1.2rem;
-            margin-top: 2.5rem;
+            margin-top: 0;
           "
         >
+          <a
+            href="#"
+            class="cta-btn"
+            style="
+              display: inline-block;
+              padding: 0.6rem 1.2rem;
+              background: var(--btn-bg);
+              color: var(--btn-text);
+              border-radius: 24px;
+              font-size: 1.08rem;
+              font-family:
+                &quot;IM Fell English&quot;, &quot;EB Garamond&quot;, Georgia,
+                serif;
+              font-weight: 400;
+              text-decoration: none;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              letter-spacing: 0.01em;
+            "
+            >Colonial Roots</a
+          >
+          <a
+            href="#"
+            class="cta-btn"
+            style="
+              display: inline-block;
+              padding: 0.6rem 1.2rem;
+              background: var(--btn-bg);
+              color: var(--btn-text);
+              border-radius: 24px;
+              font-size: 1.08rem;
+              font-family:
+                &quot;IM Fell English&quot;, &quot;EB Garamond&quot;, Georgia,
+                serif;
+              font-weight: 400;
+              text-decoration: none;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              letter-spacing: 0.01em;
+            "
+            >Explore Frontier Lineage</a
+          >
           <a
             href="projects.html"
             class="cta-btn"
@@ -190,39 +259,37 @@
               background: var(--btn-bg);
               color: var(--btn-text);
               border-radius: 24px;
-              font-size: 0.95rem;
-              font-weight: 500;
+              font-size: 1.08rem;
+              font-family:
+                &quot;IM Fell English&quot;, &quot;EB Garamond&quot;, Georgia,
+                serif;
+              font-weight: 400;
               text-decoration: none;
               box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              letter-spacing: 0.01em;
             "
-            >Special Projects</a
+            >Projects</a
           >
-          <div class="dropdown">
-            <a
-              href="#"
-              class="dropdown-toggle cta-btn"
-              style="
-                display: inline-block;
-                padding: 0.6rem 1.2rem;
-                background: var(--btn-bg);
-                color: var(--btn-text);
-                border-radius: 24px;
-                font-size: 0.95rem;
-                font-weight: 500;
-                text-decoration: none;
-                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-              "
-              >Explore Frontier Lineage</a
-            >
-            <div class="dropdown-content">
-              <a href="tree.html">My Family Tree</a>
-              <a href="wead.html">Wead Family</a>
-              <a href="schirmer.html">Schirmer Family</a>
-              <a href="trimmer.html">Trimmer Family</a>
-              <a href="ayers.html">Ayers Family</a>
-              <a href="waschow.html">Waschow Family</a>
-            </div>
-          </div>
+          <a
+            href="tree.html"
+            class="cta-btn"
+            style="
+              display: inline-block;
+              padding: 0.6rem 1.2rem;
+              background: var(--btn-bg);
+              color: var(--btn-text);
+              border-radius: 24px;
+              font-size: 1.08rem;
+              font-family:
+                &quot;IM Fell English&quot;, &quot;EB Garamond&quot;, Georgia,
+                serif;
+              font-weight: 400;
+              text-decoration: none;
+              box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+              letter-spacing: 0.01em;
+            "
+            >My Family Tree</a
+          >
         </nav>
       </header>
     </main>

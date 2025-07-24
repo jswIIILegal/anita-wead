@@ -1,46 +1,168 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Special Projects</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Projects</h1>
+    </header>
 
-  <header class="hero">
-    <h1>Special Projects</h1>
-    <p class="tagline">Private access only.</p>
-  </header>
-
-  <main>
-    <section id="project-hipka" style="margin-top:3rem;">
-      <h2>Project Hipka</h2>
-      <div id="hipka-lock">
-        <label for="hipka-pass">Password:</label>
-        <input type="password" id="hipka-pass">
-        <button onclick="unlockHipka()">Unlock</button>
-        <p id="hipka-error" style="color:red; display:none;">Incorrect password.</p>
+    <main>
+      <!-- Global project unlock -->
+      <div id="project-lock" style="margin-top: 2.5rem; text-align: center">
+        <label for="project-pass"
+          ><strong>Project Access Password:</strong></label
+        >
+        <input type="password" id="project-pass" />
+        <button onclick="unlockProjects()">Unlock</button>
+        <p
+          id="project-error"
+          style="color: red; display: none; margin-top: 0.5rem"
+        >
+          Incorrect password.
+        </p>
       </div>
-      <div id="hipka-content" style="display:none; margin-top:1rem;">
-        <!-- Add private content here -->
-      </div>
-    </section>
-  </main>
 
-  <script>
-    function unlockHipka() {
-      const pass = document.getElementById('hipka-pass').value;
-      const error = document.getElementById('hipka-error');
-      if (pass === 'felicita') {
-        document.getElementById('hipka-lock').style.display = 'none';
-        document.getElementById('hipka-content').style.display = 'block';
-        error.style.display = 'none';
-      } else {
-        error.style.display = 'block';
+      <section id="project-1759" style="display: none; margin-top: 3rem">
+        <h2>Project 1759</h2>
+        <div id="p1759-content">
+          <!-- Add private content for Project 1759 here -->
+        </div>
+      </section>
+
+      <section id="project-hipka" style="display: none; margin-top: 3rem">
+        <h2>Project Hipka</h2>
+        <div id="hipka-content">
+          <div class="hipka-gallery">
+            <img
+              src="photos/hipka/20200610_004441861_iOS.jpg"
+              alt="Hipka Photo 1"
+            />
+            <img
+              src="photos/hipka/20220608_160009057_iOS.jpg"
+              alt="Hipka Photo 2"
+            />
+            <img
+              src="photos/hipka/20220711_215215000_iOS.jpg"
+              alt="Hipka Photo 3"
+            />
+            <img
+              src="photos/hipka/2f98bfcc-fa7c-49b1-9502-02d16d6e9ac9.png"
+              alt="Hipka Photo 4"
+            />
+            <img
+              src="photos/hipka/4a84d245-dcc7-4d35-b8b7-a82ec6716ebc.png"
+              alt="Hipka Photo 5"
+            />
+            <img
+              src="photos/hipka/4e03b5ca-2971-444f-80d6-c863617718e3.png"
+              alt="Hipka Photo 6"
+            />
+            <img
+              src="photos/hipka/6f9c256b-2319-4649-8240-25976d902ac6.png"
+              alt="Hipka Photo 7"
+            />
+            <img
+              src="photos/hipka/714b8d70-fb47-4ff0-b74e-dd180f9b01c6.png"
+              alt="Hipka Photo 8"
+            />
+            <img
+              src="photos/hipka/b219cf07-7ea6-4b23-a330-0ee69a223faa.png"
+              alt="Hipka Photo 9"
+            />
+            <img
+              src="photos/hipka/b3a30025-397d-4a9f-81e7-0bd2629b4f02.png"
+              alt="Hipka Photo 10"
+            />
+            <img
+              src="photos/hipka/b59f95bc-73cf-4f73-aa1b-3d5fd27a7f1f.png"
+              alt="Hipka Photo 11"
+            />
+            <img
+              src="photos/hipka/e7025694-c620-4be8-9b7b-c97214a2122b.png"
+              alt="Hipka Photo 12"
+            />
+            <img
+              src="photos/hipka/e82d808d-defc-4dd9-a4b8-a473d7ef4be6.png"
+              alt="Hipka Photo 13"
+            />
+            <img
+              src="photos/hipka/ed7c8272-6db4-409c-b9fe-beb407d622c2.png"
+              alt="Hipka Photo 14"
+            />
+            <img
+              src="photos/hipka/f888a9a3-7822-47d7-894b-8d9d5db99dc1.png"
+              alt="Hipka Photo 15"
+            />
+            <img src="photos/hipka/GNZP4995.JPEG" alt="Hipka Photo 16" />
+            <img src="photos/hipka/GZZL1904.JPEG" alt="Hipka Photo 17" />
+            <img src="photos/hipka/KLIH6250.JPEG" alt="Hipka Photo 18" />
+            <img src="photos/hipka/NBAY7884 - Copy.JPEG" alt="Hipka Photo 19" />
+            <img
+              src="photos/hipka/photo_2025-07-16_00-59-43.jpg"
+              alt="Hipka Photo 20"
+            />
+            <img
+              src="photos/hipka/photo_2025-07-16_00-59-44.jpg"
+              alt="Hipka Photo 21"
+            />
+            <img
+              src="photos/hipka/photo_2025-07-16_00-59-45.jpg"
+              alt="Hipka Photo 22"
+            />
+            <img src="photos/hipka/photo1.jpg" alt="Hipka Photo 23" />
+            <img src="photos/hipka/photo2.jpg" alt="Hipka Photo 24" />
+            <img src="photos/hipka/photo3.jpg" alt="Hipka Photo 25" />
+          </div>
+        </div>
+      </section>
+
+      <style>
+        .hipka-gallery {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.1rem;
+          margin-top: 1.5rem;
+        }
+        .hipka-gallery img {
+          width: 100%;
+          height: auto;
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          background: #f6ecd7;
+          object-fit: cover;
+          aspect-ratio: 4/3;
+        }
+        @media (max-width: 900px) {
+          .hipka-gallery {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+        @media (max-width: 600px) {
+          .hipka-gallery {
+            grid-template-columns: 1fr;
+          }
+        }
+      </style>
+    </main>
+
+    <script>
+      function unlockProjects() {
+        const pass = document.getElementById("project-pass").value;
+        const error = document.getElementById("project-error");
+        if (pass === "felicita" || pass === "MushroomPizza") {
+          document.getElementById("project-lock").style.display = "none";
+          document.getElementById("project-hipka").style.display = "block";
+          document.getElementById("project-1759").style.display = "block";
+          error.style.display = "none";
+        } else {
+          error.style.display = "block";
+        }
       }
-    }
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>

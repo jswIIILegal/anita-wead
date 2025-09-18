@@ -35,6 +35,28 @@ body {
   line-height: 1.7;
 }
 
+/* Reusable corner logo (bottom-right) */
+.corner-logo {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  display: block;
+}
+
+.corner-logo img {
+  max-width: 350px;
+  height: auto;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  border-radius: 16px;
+  opacity: 0.92;
+  transition: opacity 0.2s;
+}
+
+.corner-logo img:hover {
+  opacity: 1;
+}
+
 header.hero {
   text-align: center;
   padding: 8rem 1rem;
@@ -99,7 +121,7 @@ main.narrow-column figure img[src*="rocky-spring-church"] {
   width: 100%;
   height: auto;
   margin: 0 auto 0.5rem auto;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.13);
   border-radius: 8px;
 }
 

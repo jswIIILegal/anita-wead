@@ -80,15 +80,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=resume.html">
-  <title>Redirecting to Résumé</title>
-  <link rel="canonical" href="resume.html">
+  <meta http-equiv="refresh" content="0; url=family-history.html">
+  <title>Redirecting to Family History</title>
+  <link rel="canonical" href="family-history.html">
+  <meta name="robots" content="noindex,follow">
+  <script>
+    // JS redirect as fallback (e.g., if meta refresh blocked)
+    window.addEventListener('DOMContentLoaded', function(){
+      if(location.pathname.endsWith('index.html') || location.pathname === '/' ) {
+        window.location.replace('family-history.html');
+      }
+    });
+  </script>
 </head>
 <body style="font-family:sans-serif;text-align:center;padding:2rem;">
-  <p>Redirecting to <a href="resume.html">Résumé</a>...</p>
-  <a href="family-history.html" style="position:fixed;bottom:24px;right:24px;z-index:1000;display:block;">
-    <img src="wead-logo.png" alt="Wead Family History" style="max-width:350px;height:auto;box-shadow:0 2px 16px rgba(0,0,0,0.18);border-radius:16px;opacity:0.92;transition:opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.92" />
-  </a>
-  <script>window.location.replace('resume.html');</script>
+  <p>Redirecting to <a href="family-history.html">Family History page</a>...</p>
+  <div style="position:fixed;bottom:24px;right:24px;z-index:1000;display:block;">
+    <img src="wead-logo.png" alt="Wead Family Logo" style="max-width:350px;height:auto;box-shadow:0 2px 16px rgba(0,0,0,0.18);border-radius:16px;opacity:0.92;" />
+  </div>
 </body>
 </html>

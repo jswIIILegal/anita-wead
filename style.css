@@ -47,7 +47,7 @@ body {
 
 .corner-logo img {
   /* Larger, responsive logo: desktop up to ~520px, scales with viewport */
-  width: clamp(240px, 28vw, 520px);
+  width: clamp(120px, 14vw, 260px);
   height: auto;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
   border-radius: 16px;
@@ -60,7 +60,7 @@ body {
 }
 
 /* Mobile: make the logo larger relative to viewport and adjust margins */
-@media (max-width: 640px) {
+@media (max-width: 200px) {
   .corner-logo {
     bottom: 16px;
     right: 16px;

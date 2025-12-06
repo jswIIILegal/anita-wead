@@ -46,7 +46,8 @@ body {
 }
 
 .corner-logo img {
-  width: clamp(60px, 18vw, 200px);
+  /* Larger, responsive logo: desktop up to ~520px, scales with viewport */
+  width: clamp(240px, 28vw, 520px);
   height: auto;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
   border-radius: 16px;
@@ -56,6 +57,18 @@ body {
 
 .corner-logo img:hover {
   opacity: 1;
+}
+
+/* Mobile: make the logo larger relative to viewport and adjust margins */
+@media (max-width: 640px) {
+  .corner-logo {
+    bottom: 16px;
+    right: 16px;
+  }
+  .corner-logo img {
+    width: min(88vw, 380px);
+    border-radius: 14px;
+  }
 }
 
 header.hero {

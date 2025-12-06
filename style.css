@@ -42,10 +42,11 @@ body {
   right: 24px;
   z-index: 1000;
   display: block;
+  pointer-events: none; /* non-clickable for now */
 }
 
 .corner-logo img {
-  max-width: 350px;
+  width: clamp(120px, 30vw, 350px);
   height: auto;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
   border-radius: 16px;

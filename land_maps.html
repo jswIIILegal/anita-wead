@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wead Ohio Land Atlas — Ebenezer and James Wead</title>
+    <link rel="stylesheet" href="style.css?v=20260714" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIINfQ3ynr8Z2uI2fQpNQ5Zr5mJtZ6H9xA4="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="land_maps.css?v=20260714" />
+  </head>
+  <body>
+    <main class="map-page">
+      <h1>Wead Ohio Land Atlas</h1>
+      <p class="map-intro">
+        This working atlas keeps the two Ohio family landscapes separate: <strong>Ebenezer Wead</strong>
+        in the Dayton, Van Buren Township, Oakwood, and Kettering area; and <strong>James Wead</strong>
+        in the Massie’s Creek and Stevenson Cemetery area of Greene County. The first version shows
+        research zones rather than pretending that unverified circles are deed boundaries.
+      </p>
+
+      <div class="map-toolbar" aria-label="Map controls">
+        <button type="button" data-map-focus="ebenezer">Focus on Ebenezer’s area</button>
+        <button type="button" data-map-focus="james">Focus on James’s area</button>
+        <button type="button" data-map-reset>Show both areas</button>
+        <a class="map-link-button" href="wead.html">Return to Wead family page</a>
+      </div>
+
+      <div id="weadLandMap" aria-label="Interactive map of Wead family Ohio research areas"></div>
+
+      <div class="map-warning">
+        <strong>Evidence control:</strong> dashed circles are search areas, not final property lines.
+        Exact tract polygons will be added only after the relevant deeds, plats, surveys, and road-name
+        records are matched to modern geography.
+      </div>
+
+      <section class="map-cards" aria-label="Research-area summaries">
+        <article class="map-card">
+          <h2>Ebenezer Wead: Dayton-area reconstruction</h2>
+          <ul>
+            <li>Reconstruct the chain of title from Ebenezer and his heirs into Patterson ownership.</li>
+            <li>Georeference the historic Wead Road image already preserved in the repository.</li>
+            <li>Locate the Library of Congress Wade/Wead Tract item remembered from earlier research.</li>
+            <li>Verify the road-name petition and determine whether the new name was Patterson Boulevard, Dorothy Lane, or another road.</li>
+            <li>Keep the Babbitt Wead Street, later Lawnview Avenue, separate unless the records prove a connection.</li>
+          </ul>
+          <p><a href="Ebenezer_Wead.html">Read the Ebenezer Wead narrative</a></p>
+        </article>
+
+        <article class="map-card">
+          <h2>James Wead: Massie’s Creek reconstruction</h2>
+          <ul>
+            <li>Anchor Stevenson Cemetery, the former Massie’s Creek church site, and Massies Creek.</li>
+            <li>Plot the Jones Road and Wilberforce–Clifton Road neighborhood accurately.</li>
+            <li>Build the deed chain for James and Elizabeth Winter Wead.</li>
+            <li>Map the Stevenson and Winter tracts that bordered or overlapped the family network.</li>
+            <li>Connect the cemetery survey, probate packet, church records, and the 1866 family letter to mapped places.</li>
+          </ul>
+          <p><a href="James_Wead.html">Read the James Wead narrative</a></p>
+        </article>
+      </section>
+
+      <section>
+        <h2>Evidence ledger</h2>
+        <p>
+          Each row records whether the present map statement is supported, approximate, unresolved,
+          or awaiting a primary source. This ledger will remain visible as the tract polygons become more precise.
+        </p>
+        <div class="evidence-table-wrap">
+          <table class="evidence-table">
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Current statement</th>
+                <th>Source or lead</th>
+              </tr>
+            </thead>
+            <tbody id="evidenceLedgerBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="map-next-steps">
+        <h2>Next source work</h2>
+        <ol>
+          <li>Identify the exact Library of Congress item and record its permanent identifier.</li>
+          <li>Collect Montgomery County deed references for Ebenezer, his heirs, and the Patterson acquisition.</li>
+          <li>Locate the road petition or plat that records the Wead road-name change and its date.</li>
+          <li>Collect Greene County deed references for James and neighboring Stevenson and Winter owners.</li>
+          <li>Replace the broad circles with traced tract polygons and attach a citation to every geometry.</li>
+        </ol>
+        <p>
+          Development and research tracking are recorded in
+          <a href="https://github.com/jswIIILegal/anita-wead/issues/2">GitHub issue #2</a>.
+        </p>
+      </section>
+    </main>
+
+    <div class="corner-logo">
+      <img src="wead-logo.png" alt="Wead Family Logo" />
+    </div>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="wead-land-map-data.js?v=20260714"></script>
+    <script src="land_maps.js?v=20260714"></script>
+  </body>
+</html>

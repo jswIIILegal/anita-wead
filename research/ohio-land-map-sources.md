@@ -1,35 +1,77 @@
 # Ohio Land Map Source Ledger
 
-This document supports the interactive map in `land_maps.html`. It separates verified facts, repository evidence, research leads, and unresolved hypotheses so that approximate map geometry is never mistaken for a deed boundary.
+This document supports the interactive map in `land_maps.html`. It separates verified facts, local-history synthesis, primary-source leads, and unresolved hypotheses so that approximate map geometry is never mistaken for a deed boundary.
+
+A detailed Dayton-side research memo is available at `research/ebenezer-oakwood-wead-tract-findings.md`.
 
 ## 1. Ebenezer Wead — Dayton / Van Buren Township
 
 ### Supported in the repository
 
 - `Ebenezer_Wead.html` places Ebenezer in Van Buren Township in the Dayton-area frontier around 1799 and records his burial at Beavertown Cemetery in 1830.
-- `Ebenezer_Wead.html` includes a section titled **Wead Road and Legacy**.
-- The repository contains `assets/Wead Road.jpg`, described on the page as a map shared by David Schmidt and appearing in Charlotte Reeve Conover's *Concerning the Forefathers*.
+- The repository contains `assets/Wead Road.jpg`, a map image supplied by David Schmidt and traced to Charlotte Reeve Conover's *Concerning the Forefathers*.
+- David Schmidt's correspondence identifies Library of Congress nineteenth-century Montgomery County maps, county road records, and the Olmsted job file as the principal map leads.
 
-### Family-research leads to verify
+### Critical correction: Ebenezer's farm versus the Oakwood Wead tract
 
-1. Land associated with Ebenezer or his heirs eventually passed to the Patterson family.
-2. A Patterson petition sought to rename Wead Road around 1904.
-3. The replacement name may have been Patterson Boulevard, Dorothy Lane, or another road.
-4. A relevant Library of Congress item may be indexed under a title or description similar to **Wade Tract**, Oakwood, Dayton, or Van Buren Township.
-5. David Schmidt supplied substantial historical context and map evidence; his exact former institutional affiliation and any written notes should be preserved accurately.
+The exact parcel owned or occupied by **Ebenezer Wead himself** is not yet established.
 
-### Critical distinction
+The better-documented Oakwood tract is associated in local-history sources with **John and Robert Wead and their heirs**. It should be mapped as a related Wead-family tract, not automatically labeled as Ebenezer's personal farm.
 
-A published history of the University of Dayton's Babbitt neighborhood identifies a **Wead Street**, later **Lawnview Avenue**. This may be a separate road from the Wead Road shown in the farm/tract material. The two should remain separate map features unless deed, plat, or petition evidence proves they are connected.
+### Exact Library of Congress item
 
-### Records needed
+The remembered Wade/Wead item has been identified:
 
-- Montgomery County deed index: Ebenezer Wead, John Stewart Wead, other heirs, Robert Patterson, Jefferson Patterson, John H. Patterson, and related grantees/grantors.
-- Van Buren Township tax duplicates and early road records.
-- County commissioner road petitions, municipal annexation records, and subdivision plats.
-- Oakwood and Dayton historic plat books.
-- Library of Congress catalog item and stable identifier.
-- Full bibliographic citation and page number for the Conover map.
+- **Olmsted Associates Job 6720**
+- Catalog title: *Patterson, John H.; Wade tract, subdivision "Woodside"; Dayton, Ohio, 1919–1921*
+- Item: <https://www.loc.gov/item/mss5257104274/>
+- Gallery: <https://www.loc.gov/resource/mss52571.mss52571-02-326_0415_0426/?st=gallery>
+
+The file includes road studies, correspondence, topographic plans, profiles, and the General Plan for Woodside. The archival spelling **Wade** refers to the property called the **Wead Farm** in contemporary McCann Plat advertising and Oakwood historical material.
+
+### Oakwood Wead-family tract: current evidence
+
+Oakwood Historical Society research summarizes this chain:
+
+1. Colonel Robert Patterson's land passed to his son Francis Patterson.
+2. Francis sold 71 acres to John Wead and 80 acres to Robert Wead.
+3. Robert sold 15 acres to John.
+4. John controlled land described as west of the railroad, east of present Shafor Boulevard, and extending south from Irving Avenue to Wead Road.
+5. John Wead's 1893 will left the remaining railroad/Irving Avenue property for the benefit of his daughter Nancy Davis.
+6. Davis heirs sold parcels that became the Ohmer and McCann developments.
+7. The remaining 53.74 acres passed in 1919 to John H. Patterson.
+8. Patterson's children later sold it for the Far Hills Estates development, platted in 1928.
+
+This is strong secondary/local-history evidence. The project still needs the deed-book, probate, and partition references before treating the entire boundary as a verified tract.
+
+### Road-name resolution
+
+The main road question is substantially resolved:
+
+- Historic **Wead Road** became **Patterson Road**.
+- Oakwood Historical Society dates the change to **1909** and states that John H. Patterson petitioned the court for the renaming.
+- **Dorothy Lane** was formerly **O'Neil Road** and is a separate renaming.
+- References to **John H. Patterson Boulevard** concern another proposed or early road name and do not identify the replacement for Wead Road.
+- A county road image from about 1901 still shows Wead Road meeting Lebanon Pike; Oakwood history identifies Lebanon Pike as present-day Far Hills Avenue.
+
+The original 1909 petition and order remain a primary-source target.
+
+### Separate Babbitt Wead Street
+
+Published neighborhood history identifies a **Wead Street** in the former Babbitt settlement, later **Lawnview Avenue**. Babbitt lies north of Irving Avenue in Dayton's present University of Dayton student-neighborhood area.
+
+This is geographically distinct from the Oakwood section-line road that became Patterson Road. The original Babbitt plat or Dayton street-renaming record is still needed, but the two roads should remain separate map features.
+
+### Records still needed
+
+- Ebenezer Wead's own Montgomery County deed chain, tax duplicates, and probate land description.
+- Deeds from Francis Patterson to John and Robert Wead.
+- Evidence tying the Oakwood John and Robert conclusively into Ebenezer's family record.
+- John Wead's 1893 will.
+- Davis-heirs partition proceeding and 1919 conveyance to John H. Patterson.
+- Original 1909 road-name petition and court order.
+- Original Babbitt plat or ordinance for Wead Street / Lawnview Avenue.
+- Georeferencing of the Olmsted plans against the railroad, Patterson Road, Shafor Boulevard, Schantz Avenue, and Irving Avenue.
 
 ## 2. James Wead — Massie's Creek / Greene County
 
@@ -59,17 +101,18 @@ A published history of the University of Dayton's Babbitt neighborhood identifie
 
 - **Verified point:** an authoritative location or coordinate supported by a cited source.
 - **Approximate research area:** a broad search zone used to organize work; never presented as a property boundary.
-- **Candidate tract:** geometry inferred from historical descriptions but not yet closed by a full deed chain.
+- **Candidate tract:** geometry inferred from historical descriptions and maps but not yet closed by a full deed chain.
 - **Verified tract:** boundary reconstructed from deeds, surveys, plats, or other sufficiently precise primary records.
+- **Supported local-history statement:** a claim found in a reputable local-history synthesis but still awaiting the underlying deed, docket, or recorded instrument.
 - **Unresolved claim:** a remembered or secondary-source statement retained as a lead without being presented as fact.
 
 ## 4. Next implementation steps
 
-1. Find the Library of Congress Wade/Wead Tract item.
-2. Enter exact cemetery and road coordinates from authoritative sources.
-3. Scan or export the Conover/Schmidt map at the highest available resolution.
-4. Identify control points that appear on both the historical map and modern geography.
-5. Georeference the historical map.
-6. Build separate deed-chain tables for Ebenezer and James.
+1. Add the Oakwood family tract as a candidate layer distinct from Ebenezer's own farm-research zone.
+2. Georeference the Olmsted Job 6720 plans using surviving roads and the railroad corridor.
+3. Enter the exact 1909 road-name petition when located.
+4. Build a deed-chain table for the Patterson → John/Robert Wead → heirs → Patterson sequence.
+5. Locate Ebenezer's personal parcel rather than substituting the descendants' Oakwood tract.
+6. Collect Greene County deeds for James and neighboring Stevenson and Winter owners.
 7. Add GeoJSON polygons only after the evidence supports them.
 8. Attach a source ID and confidence field to every point, line, and polygon.

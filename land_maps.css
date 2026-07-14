@@ -1,0 +1,164 @@
+.map-page {
+  max-width: 1180px;
+}
+
+.map-intro {
+  max-width: 920px;
+  margin: 0 auto 1.4rem;
+  font-size: 1.08rem;
+  color: var(--ink-mid);
+}
+
+.map-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 1.25rem 0;
+}
+
+.map-toolbar button,
+.map-page .map-link-button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.7rem 1.15rem;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.14);
+}
+
+.map-toolbar button:hover,
+.map-page .map-link-button:hover {
+  background: var(--btn-bg-hover);
+}
+
+#weadLandMap {
+  width: 100%;
+  min-height: 610px;
+  border: 1px solid rgba(77, 56, 35, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.14);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.map-warning {
+  margin: 1rem 0 1.6rem;
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(255, 255, 255, 0.62);
+  color: var(--ink-mid);
+}
+
+.map-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.6rem 0;
+}
+
+.map-card {
+  padding: 1rem 1.1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.58);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.map-card h2 {
+  margin-top: 0;
+}
+
+.map-card ul {
+  padding-left: 1.25rem;
+}
+
+.map-card li {
+  margin-bottom: 0.5rem;
+}
+
+.map-popup h3 {
+  margin: 0 0 0.55rem;
+  color: var(--ink-dark);
+}
+
+.map-popup p {
+  margin: 0.45rem 0;
+}
+
+.map-popup-source {
+  font-size: 0.92rem;
+  color: var(--ink-mid);
+}
+
+.evidence-table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 2rem;
+}
+
+.evidence-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.evidence-table th,
+.evidence-table td {
+  padding: 0.65rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(139, 94, 52, 0.2);
+}
+
+.evidence-table th {
+  background: rgba(111, 75, 43, 0.1);
+}
+
+.evidence-status {
+  display: inline-block;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(111, 75, 43, 0.12);
+  white-space: nowrap;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.map-next-steps {
+  margin-top: 1.5rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  background: rgba(139, 94, 52, 0.09);
+}
+
+.map-next-steps ol {
+  padding-left: 1.3rem;
+}
+
+.map-next-steps li {
+  margin-bottom: 0.5rem;
+}
+
+.leaflet-control-layers,
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  font-family: "EB Garamond", Georgia, serif;
+}
+
+@media (max-width: 760px) {
+  #weadLandMap {
+    min-height: 500px;
+  }
+
+  .map-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .map-toolbar button,
+  .map-page .map-link-button {
+    width: 100%;
+  }
+}

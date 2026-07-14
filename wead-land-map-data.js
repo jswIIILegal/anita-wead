@@ -4,24 +4,25 @@ window.WEAD_LAND_MAP_DATA = {
   groups: [
     {
       id: "ebenezer",
-      title: "Ebenezer Wead — Dayton / Van Buren Township",
-      shortTitle: "Ebenezer area",
-      focus: [39.72, -84.17],
+      title: "Ebenezer Wead and related Dayton/Oakwood land",
+      shortTitle: "Dayton / Oakwood",
+      focus: [39.73, -84.17],
       zoom: 12,
       description:
-        "Research area for Ebenezer Wead's Ohio land, the historic Wead/Wade tract, later Patterson ownership, road-name history, and Beavertown Cemetery.",
+        "Research layers for Ebenezer Wead's unresolved personal farm, the later Oakwood Wead-family tract associated with John and Robert Wead and their heirs, historic road-name evidence, and the separate Babbitt Wead Street.",
       features: [
         {
           id: "ebenezer-research-zone",
           type: "circle",
-          center: [39.72, -84.17],
+          center: [39.71, -84.16],
           radiusMeters: 6500,
-          title: "Ebenezer Wead land-reconstruction zone",
+          title: "Ebenezer Wead personal-farm research zone",
           dateRange: "c. 1799–1830",
           confidence: "research-area",
-          source: "Ebenezer_Wead.html; historic map image assets/Wead Road.jpg",
+          source:
+            "Ebenezer_Wead.html; early Van Buren Township records; Beavertown Cemetery evidence",
           note:
-            "Broad working area only. It is not an asserted deed boundary. Replace this circle with deed-based polygons after the Montgomery County chain of title and historic plats are reconciled."
+            "Broad working area only. The exact parcel owned or occupied by Ebenezer has not yet been established. Do not substitute the later Oakwood tract of John and Robert Wead for Ebenezer's personal farm without a deed or probate link."
         },
         {
           id: "beavertown-cemetery-zone",
@@ -33,7 +34,33 @@ window.WEAD_LAND_MAP_DATA = {
           confidence: "location-to-verify",
           source: "Ebenezer_Wead.html",
           note:
-            "Existing site research identifies Beavertown Cemetery as Ebenezer's burial place. The displayed circle is deliberately broad until an authoritative coordinate is entered."
+            "Family research identifies Beavertown Cemetery as Ebenezer's burial place. The displayed circle remains deliberately broad until an authoritative coordinate is entered."
+        },
+        {
+          id: "oakwood-wead-tract-candidate",
+          type: "circle",
+          center: [39.731, -84.162],
+          radiusMeters: 1500,
+          title: "Oakwood Wead-family tract — candidate area",
+          dateRange: "c. 1820s–1919",
+          confidence: "candidate-tract",
+          source:
+            "Oakwood Historical Society synthesis; 1872 and 1901 Montgomery County road records; Library of Congress Olmsted Job 6720",
+          note:
+            "Approximate search area for land associated with John and Robert Wead and later heirs. Historic descriptions place it west of the railroad, east of present Shafor Boulevard, south from Irving Avenue to historic Wead Road/current Patterson Road. This circle is not a deed boundary."
+        },
+        {
+          id: "babbitt-wead-street-zone",
+          type: "circle",
+          center: [39.746, -84.17],
+          radiusMeters: 850,
+          title: "Babbitt Wead Street / later Lawnview Avenue",
+          dateRange: "19th–20th century",
+          confidence: "separate-historic-feature",
+          source:
+            "Published University of Dayton neighborhood history; original plat or renaming ordinance still needed",
+          note:
+            "This street lies north of the Oakwood tract in the former Babbitt settlement. It is a separate feature from the Oakwood section-line road that became Patterson Road."
         }
       ]
     },
@@ -82,32 +109,81 @@ window.WEAD_LAND_MAP_DATA = {
       source: "Ebenezer_Wead.html"
     },
     {
-      subject: "Historic Wead Road map",
-      status: "supported-with-source-image",
-      statement:
-        "The repository contains a historical Wead Road image attributed in the page narrative to Charlotte Reeve Conover and supplied by David Schmidt.",
-      source: "assets/Wead Road.jpg; Ebenezer_Wead.html"
-    },
-    {
-      subject: "Patterson acquisition",
-      status: "needs-primary-verification",
-      statement:
-        "Family research indicates that land associated with Ebenezer later passed to the Patterson family. The deed sequence and exact tract boundary still need to be entered.",
-      source: "Research lead supplied by Jimmy Wead"
-    },
-    {
-      subject: "Road-name petition",
+      subject: "Ebenezer's exact farm",
       status: "unresolved",
       statement:
-        "A remembered Patterson petition may have changed a Wead road name around 1904, possibly to Patterson Boulevard or Dorothy Lane. This must be verified from the petition, plat, or municipal record.",
-      source: "Library of Congress / local-history research lead"
+        "The precise Ohio parcel owned or occupied by Ebenezer has not yet been established and must remain separate from the better-documented Oakwood holdings of later Weads.",
+      source: "Current deed-chain research"
     },
     {
-      subject: "Possible second Wead street",
-      status: "separate-until-proven",
+      subject: "Exact Library of Congress record",
+      status: "primary-source-supported",
       statement:
-        "Published neighborhood history identifies a Wead Street in Babbitt that later became Lawnview Avenue. Do not assume it is the same road as the Oakwood/Van Buren farm-road evidence.",
-      source: "University of Dayton neighborhood-history lead"
+        "The remembered Wade/Wead tract file is Olmsted Associates Job 6720: Patterson, John H.; Wade tract, subdivision 'Woodside'; Dayton, Ohio, 1919–1921.",
+      source: "Library of Congress item mss5257104274"
+    },
+    {
+      subject: "Wade versus Wead",
+      status: "primary-source-supported",
+      statement:
+        "The Olmsted file uses Wade, while contemporary McCann advertisements identify the same development context as the former Wead Farm.",
+      source: "Olmsted Job 6720; 1917–1918 McCann Plat advertisements"
+    },
+    {
+      subject: "Oakwood family tract",
+      status: "supported-local-history",
+      statement:
+        "Oakwood historical research traces Patterson-family acreage to John and Robert Wead, then through Wead heirs and Nancy Davis's family before a 53.74-acre remnant passed to John H. Patterson in 1919.",
+      source: "Oakwood Historical Society; deed and probate citations still required"
+    },
+    {
+      subject: "1872 road record",
+      status: "primary-source-supported",
+      statement:
+        "A Montgomery County record for James J. Bradford Road shows the corridor beginning at the Dayton and Lebanon Pike and passing land marked J. S. Wade. It is a strong predecessor lead for the later Wead/Wade Road corridor.",
+      source: "1872 Montgomery County road record supplied by David Schmidt"
+    },
+    {
+      subject: "1901 Wade Road",
+      status: "primary-source-supported",
+      statement:
+        "A 1901 county survey explicitly labels Wade Road at its junction with the Dayton and Lebanon Pike and shows Patterson ownership beside the junction.",
+      source: "1901 Montgomery County road survey supplied by David Schmidt"
+    },
+    {
+      subject: "Wead Road renamed Patterson Road",
+      status: "supported-local-history",
+      statement:
+        "Oakwood Historical Society research dates John H. Patterson's successful court petition renaming Wead Road as Patterson Road to 1909. The original petition and order remain a primary-source target.",
+      source: "Oakwood Historical Society street-name research"
+    },
+    {
+      subject: "Dorothy Lane and Patterson Boulevard",
+      status: "supported-local-history",
+      statement:
+        "Dorothy Lane was formerly O'Neil Road, and John H. Patterson Boulevard was a separate proposed or early road name. Neither is the replacement name for Wead Road.",
+      source: "Oakwood Historical Society street-name research"
+    },
+    {
+      subject: "J. S. Wade identity",
+      status: "identity-hypothesis",
+      statement:
+        "The J. S. Wade shown in the 1872 road record may be John Stewart Wead, but the identification requires deeds, census records, or probate evidence before it is stated as fact.",
+      source: "Family hypothesis; primary identity proof needed"
+    },
+    {
+      subject: "Robert Wead identity",
+      status: "identity-hypothesis",
+      statement:
+        "David Schmidt could not confirm whether the Oakwood Robert Wead was Robert E. Wead (1781–1857), son of Ebenezer and brother of James.",
+      source: "David Alan Schmidt correspondence, January 13, 2025"
+    },
+    {
+      subject: "Separate Babbitt Wead Street",
+      status: "separate-historic-feature",
+      statement:
+        "Published neighborhood history identifies a Wead Street in Babbitt that later became Lawnview Avenue. It is geographically distinct from the Oakwood road that became Patterson Road.",
+      source: "University of Dayton neighborhood-history lead; original plat needed"
     },
     {
       subject: "James at Massie's Creek",

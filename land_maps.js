@@ -11,14 +11,13 @@
     preferCanvas: true
   }).setView(data.mapCenter, data.mapZoom);
 
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
   const layerControl = {};
-  const bounds = [];
 
   function confidenceLabel(value) {
     const labels = {
@@ -62,7 +61,6 @@
           dashArray:
             feature.confidence === "research-area" ? "8 7" : "3 6"
         });
-        bounds.push(feature.center);
       }
 
       if (!layer) return;

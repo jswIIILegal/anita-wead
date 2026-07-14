@@ -23,11 +23,16 @@
     const labels = {
       supported: "Supported",
       "supported-with-source-image": "Supported by source image",
+      "primary-source-supported": "Supported by primary source",
+      "supported-local-history": "Supported by local-history synthesis",
       "research-area": "Approximate research area",
+      "candidate-tract": "Candidate tract / approximate area",
       "location-to-verify": "Location requires coordinate verification",
       "needs-primary-verification": "Needs primary-source verification",
       unresolved: "Unresolved",
-      "separate-until-proven": "Keep separate until proven"
+      "identity-hypothesis": "Identity hypothesis",
+      "separate-until-proven": "Keep separate until proven",
+      "separate-historic-feature": "Separate historical feature"
     };
     return labels[value] || value;
   }
@@ -45,6 +50,20 @@
     `;
   }
 
+  function circleStyle(feature) {
+    const styles = {
+      "research-area": { dashArray: "8 7", fillOpacity: 0.08 },
+      "candidate-tract": { dashArray: "4 4", fillOpacity: 0.16 },
+      "location-to-verify": { dashArray: "3 6", fillOpacity: 0.1 },
+      "separate-historic-feature": { dashArray: "2 5", fillOpacity: 0.1 }
+    };
+
+    return styles[feature.confidence] || {
+      dashArray: "3 6",
+      fillOpacity: 0.12
+    };
+  }
+
   data.groups.forEach((group) => {
     const groupLayer = L.layerGroup().addTo(map);
     layerControl[group.shortTitle] = groupLayer;
@@ -53,13 +72,13 @@
       let layer;
 
       if (feature.type === "circle") {
+        const style = circleStyle(feature);
         layer = L.circle(feature.center, {
           radius: feature.radiusMeters,
           weight: 2,
           opacity: 0.9,
-          fillOpacity: 0.12,
-          dashArray:
-            feature.confidence === "research-area" ? "8 7" : "3 6"
+          fillOpacity: style.fillOpacity,
+          dashArray: style.dashArray
         });
       }
 

@@ -3,6 +3,8 @@
 This document supports the interactive map in `land_maps.html`. It separates verified facts, local-history synthesis, primary-source leads, and unresolved hypotheses so that approximate map geometry is never mistaken for a deed boundary.
 
 A detailed Dayton-side research memo is available at `research/ebenezer-oakwood-wead-tract-findings.md`.
+A detailed Greene County deed-search memo for James's likely Survey 870 parcel is available at
+`research/james-wead-survey-870-deed-research.md`.
 
 ## 1. Ebenezer Wead — Dayton / Van Buren Township
 
@@ -88,12 +90,26 @@ This is geographically distinct from the Oakwood section-line road that became P
 2. The relevant neighborhood is near Jones Road, Wilberforce–Clifton Road, Massies Creek, and Stevenson Cemetery.
 3. Winter, Stevenson, and Wead burial clusters may reflect adjoining or nearby family farms, but cemetery adjacency alone is not a land-title conclusion.
 4. John Steele Wead's Civil War association with a Stevenson may reflect the same neighborhood network.
+5. The former **J. Wade / James Wead** land lead is now tied to **William Darke Survey No. 870**, but the post-1873 grantee and exact deed book/page are still unresolved.
+
+### Survey 870 deed-search path
+
+The July 2026 deed-research report narrows the Greene County land question to a targeted Recorder-index workflow:
+
+- Search Greene County **direct deed index volume 6-7 (1873-1889)**, **film 461683 / DGS 8330821**.
+- Search the period **1873-1880** first.
+- Check grantor headings for **Wead, Wade, Weed, Waid, Wood, Stevenson, Grove, and Eckman**.
+- Pay special attention to **John Stevenson as administrator with the will annexed of James Wead** and to possible deeds by the devisees and spouses: **Robert E. Wead, Joseph S. Wead, John S. Wead, Elizabeth Grove, and Ellen Joanna Eckman**.
+- Use the corresponding reverse indexes and deed books after every promising direct-index hit.
+- Corroborate the ownership transition with Greene County tax duplicates for **1873-1880** and probate/will indexes.
+
+The report also notes earlier contextual Survey 870 index leads: Elizabeth Wead to James S. Stevenson, book 24 page 76; and James/Joseph S. Wead and Elizabeth Wead to John or Wm. J. McNier, book 25 page 224, involving 15 acres in Survey 870. These are leads to verify from the actual deed images.
 
 ### Records needed
 
-- Greene County deed index and deed books for James Wead and Elizabeth Wead.
+- Greene County deed index and deed books for James Wead, Elizabeth Wead, and the post-1873 Survey 870 grantor set.
 - Deeds and probate records for adjacent Stevenson and Winter owners.
-- Tax duplicates, township maps, road records, and historical atlases.
+- Tax duplicates for 1873-1880, township maps, road records, and historical atlases.
 - Exact modern coordinates for Stevenson Cemetery, the former church site, Jones Road, Wilberforce–Clifton Road, and relevant Massies Creek crossings.
 - Parcel-by-parcel chain of title before drawing a final polygon.
 
@@ -113,6 +129,7 @@ This is geographically distinct from the Oakwood section-line road that became P
 3. Enter the exact 1909 road-name petition when located.
 4. Build a deed-chain table for the Patterson → John/Robert Wead → heirs → Patterson sequence.
 5. Locate Ebenezer's personal parcel rather than substituting the descendants' Oakwood tract.
-6. Collect Greene County deeds for James and neighboring Stevenson and Winter owners.
-7. Add GeoJSON polygons only after the evidence supports them.
-8. Attach a source ID and confidence field to every point, line, and polygon.
+6. Work Greene County direct deed index volume 6-7 (1873-1889), DGS 8330821, for James's Survey 870 post-death conveyance.
+7. Collect Greene County deeds for James and neighboring Stevenson and Winter owners.
+8. Add GeoJSON polygons only after the evidence supports them.
+9. Attach a source ID and confidence field to every point, line, and polygon.

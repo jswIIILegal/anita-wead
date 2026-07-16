@@ -109,6 +109,13 @@ window.WEAD_LAND_MAP_DATA = {
       source: "Ebenezer_Wead.html"
     },
     {
+      subject: "Ebenezer Wood military identity",
+      status: "identity-hypothesis",
+      statement:
+        "Lee's Legion and bounty-land materials naming Ebenezer Wood are retained as a research lead for Ebenezer Wead, but the site no longer treats the identity as proved until the full affidavit, heir, residence, and land-record chain is reconciled.",
+      source: "Ebenezer_Wead.html; family archive materials under review"
+    },
+    {
       subject: "Ebenezer's exact farm",
       status: "unresolved",
       statement:
@@ -193,11 +200,18 @@ window.WEAD_LAND_MAP_DATA = {
       source: "James_Wead.html; Sugar Creek Presbyterian correspondence"
     },
     {
+      subject: "James's Survey 870 parcel",
+      status: "targeted-research-path",
+      statement:
+        "The former J. Wade / James Wead land lead is now tied to William Darke Survey No. 870. The likely post-death conveyance should be searched in Greene County direct deed index volume 6-7 (1873-1889), DGS 8330821, under Wead/Wade/Waid/Weed/Wood, Stevenson, Grove, and Eckman, then verified from the deed image.",
+      source: "research/james-wead-survey-870-deed-research.md"
+    },
+    {
       subject: "James's exact farm",
       status: "unresolved",
       statement:
-        "Family research places James beside or near the Stevenson family, but an exact parcel polygon requires Greene County deeds, tax duplicates, and historic plats.",
-      source: "Research lead supplied by Jimmy Wead"
+        "Family research places James beside or near the Stevenson family, but an exact parcel polygon requires the Survey 870 deed image, tax duplicates, probate cross-checks, and historic-map reconciliation.",
+      source: "Research lead supplied by Jimmy Wead; Survey 870 deed-search memo"
     }
   ]
 };
